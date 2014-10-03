@@ -1,0 +1,193 @@
+\startenvironment environ_erecolnat
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% GÉNÉRAL
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setupcolors[state=start]
+\setuppagenumbering[location=footer]
+\setupfootnotes[rule=on]
+\setuplayout[
+  topspace=0cm,
+  backspace=2.5cm,
+  margin=2.5cm,
+  leftmargindistance=0cm,
+  rightmargindistance=0cm,
+  textmargin=0cm,
+  header=2.5cm,
+  footer=2.5cm,
+  width=fit,
+  height=29cm,
+]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% LANGUE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainlanguage[fr]
+\setcharacterspacing[frenchpunctuation]
+\usemodule[french]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MODULES UTILES
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usemodule[ipsum]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TYPESCRIPTS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setupcapitals[sc=yes]
+
+% Features
+
+\definefontfeature[feabody][liga=yes,kern=yes,tlig=yes,trep=yes,hlig=yes,onum=yes,dlig=no,swsh=yes,cswh=yes]
+\definefontfeature[feabodysc][liga=yes,kern=yes,tlig=yes,trep=yes,hlig=yes,onum=yes,dlig=no,swsh=yes,cswh=yes,smcp=yes]
+
+% Adobe Jenson Pro
+
+\starttypescript[serif][jenson]
+  \definefontsynonym[Serif][name:ajensonproregular][features=feabody]
+  \definefontsynonym[SerifBold][name:ajensonprobold][features=feabody]
+  \definefontsynonym[SerifItalic][name:ajensonproit][features=feabody]
+  \definefontsynonym[SerifSlanted][name:ajensonproit][features=feabody]
+  \definefontsynonym[SerifBoldItalic][name:ajensonproboldit][features=feabody]
+  \definefontsynonym[SerifBoldSlanted][name:ajensonproboldit][features=feabody]
+  \definefontsynonym[SerifCaps][name:ajensonproregular][features=feabodysc]
+  \definefontsynonym[SerifSmallCaps][name:ajensonproregular][features=feabodysc]
+\stoptypescript
+
+% Gill Sans Std Condensed
+
+\starttypescript[sans][gill]
+  \definefontsynonym[Sans][name:gillsansstdcondensed]
+  \definefontsynonym[SansBold][name:gillsansstdboldcondensed]
+  \definefontsynonym[SansItalic][name:gillsansstdcondensed]
+  \definefontsynonym[SansSlanted][name:gillsansstdcondensed]
+  \definefontsynonym[SansBoldItalic][name:gillsansstdboldcondensed]
+  \definefontsynonym[SansBoldSlanted][name:gillsansstdboldcondensed]
+  \definefontsynonym[SansCaps][name:gillsansstdcondensed]
+  \definefontsynonym[SansSmallCaps][name:gillsansstdcondensed]
+\stoptypescript
+
+% Adobe Wood Type Ornaments
+
+\starttypescript[serif][awto]
+  \definefontsynonym[Serif][name:woodtypeornamentsstd][features=default]
+  \definefontsynonym[SerifBold][name:woodtypeornamentsstd][features=default]
+  \definefontsynonym[SerifBoldItalic][name:woodtypeornamentsstd][features=default]
+  \definefontsynonym[SerifItalic][name:woodtypeornamentsstd][features=default]
+  \definefontsynonym[SerifSlanted][name:woodtypeornamentsstd][features=default]
+  \definefontsynonym[SerifBoldSlanted][name:woodtypeornamentsstd][features=default]
+  \definefontsynonym[SerifCaps][name:woodtypeornamentsstd][features=default]
+\stoptypescript
+
+% A cool font for typewriter
+
+\starttypescript[mono][gill]
+  \definefontsynonym[Mono][name:gillsansstd]
+  \definefontsynonym[MonoBold][name:gillsansstdbold]
+\stoptypescript
+
+% Main
+
+\starttypescript[Main]
+  \definetypeface[Main][rm][serif][jenson]
+  \definetypeface[Main][ss][sans][gill]
+  \definetypeface[Main][tt][mono][gill]
+\stoptypescript
+
+% Application
+
+\setupbodyfont[Main,14pt]
+
+\definetypeface[awto][rm][serif][awto][default][rscale=1]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PDF
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setupinteraction[state=start]
+\setupcombinedlist[content][interaction=all]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% POLICES DE LA STRUCTURE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definetypeface[fpart][ss][sans][gill][default][rscale=2.5]
+\definetypeface[fchapter][ss][sans][gill][default][rscale=2.5]
+\definetypeface[fsection][ss][sans][gill][default][rscale=2]
+\definetypeface[fsubsection][ss][sans][gill][default][rscale=1.75]
+\definetypeface[fsubsubsection][ss][sans][gill][default][rscale=1.5]
+
+\define[2]\partie{#1#2}
+
+\setuphead[part][placehead=yes,alternative=middle,textstyle=cap,style=\fpart,conversion=Romannumerals,after=\page,before={~\blank[4cm]}]
+\setuphead[chapter][style=\fchapter,page=no]
+\setuphead[section][style=\fsection]
+\setuphead[subsection][style=\fsubsection]
+\setuphead[subsubsection][style=\fsubsubsection]
+
+% \setupsection[section-2][bodypartconversion=Character]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% LISTES
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setupitemgroup[itemize][margin=1cm]
+\setupitemize[1,packed]
+\definesymbol[1][\awto\char57364]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% COULEURS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Palettes
+\definecolor[hawaiianreef1][h=003B5B]
+\definecolor[hawaiianreef2][h=006875]
+\definecolor[hawaiianreef3][h=02857F]
+\definecolor[hawaiianreef4][h=279886]
+\definecolor[hawaiianreef5][h=489F86]
+
+% Page
+\setupbackgrounds[page][background=color,backgroundcolor=white]
+
+% Text
+\setupcolors[textcolor=black]
+\setuphead[part][color=hawaiianreef1]
+\setuphead[chapter][color=hawaiianreef2]
+\setuphead[section][color=hawaiianreef3]
+\setuphead[subsection][color=hawaiianreef4]
+\setuphead[subsubsection][color=hawaiianreef5]
+
+% Elements
+\definecolor[foo][h=798D8E]
+\definecolor[bzz][h=798D8E]
+\setupnotation[footnote][color=foo]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MACROS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\define[4]\fig{\placefigure[here][#3]{#2}{\startalignment[center]\blank\externalfigure[#1][factor=#4]\blank\stopalignment}}
+
+\stopenvironment

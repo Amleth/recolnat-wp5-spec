@@ -1,0 +1,57 @@
+\startcomponent component_apis
+\product product_specfonc
+\startpart[title={Les APIs de l'écosystème e-RecolNat},reference=part:api]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Principes généraux des API}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Proposition de principe général}]
+
+Les différents modules du portail peuvent chacun renvoyer à des acteurs, pratiques et enjeux spécifiques, dépendre de bases de données qui leurs sont propres ou encore être écrits dans des langages différents.
+Cette hétérogénéité fonctionnelle et technique ne doit cependant pas obombrer le fait que les modules sont amenés à manipuler les mêmes concepts et objets documentaires, sociaux et scientifiques (planche, spécimen, détermination, collection, unité de transcription, récolteur/teuse, utilisateur/trice, sous-partie d'intérêt d'une planche, etc.).
+Ainsi, s'il est prévu que les modules déploient des outils métier particuliers justifiant leurs existences autonomes, il est cependant vital qu'ils puissent consommer les données produites par leurs pairs.
+Au surplus, la couverture fonctionnelle d'un module pourra être naturellement amenée à évoluer durant la vie du projet (pour hypothèse : l'utilité d'une extension des Herbonautes pourrait être révélée d'ici un ou deux ans suite à une première série de tests, laquelle conduirait à la collecte d'un nouveau type de données dont l'exploitation serait également pertinente dans les autre modules).
+Pour ces raisons, nous préconisons que chaque module propose une API {\it exposant l'intégralité des données qu'il permet de récolter}.
+Ces APIs ne devraient pas être conçues en s'adaptant aux spécifications émanant des autres modules dénotant les besoins respectifs de ceux-ci à un temps donné, mais devraient plus simplement poursuivre le but d'exposer des données « brutes » structurées dans les termes métier des modules auxquels elles sont rattachées, sans présupposer des usages et attentes possibles en d'autres lieux du portail (voir la figure \in[f:apis]).
+
+\fig{apis}{Une API complète par module}{f:apis}{max}
+
+\stopsection
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Avantages futurs en terme de gestion de projet}]
+
+Ce découplage des APIs des modules fournisseurs de données par rapport aux besoins des modules tiers consommateurs de données possède des vertus sur le plan de la gestion de projet.
+Ainsi, si un module fournisseur M1 attend qu'un module consommateur M2 spécifie les termes et structures sous lesquels il souhaite pouvoir accéder à un sous-ensemble des données de M1, l'API proposée par M1 pourra se trouver inadéquate pour une future demande identique émanant d'un autre module M3.
+Dans ce cas, l'API définie par M1 pour M2 posera des problèmes assimilable à une dette technique pour toute extension à d'autres modules consommateurs.
+Si au contraire les modules fournisseurs exposent chacun une API complète « brute », la gestion des APIs ne constitue plus un ensemble de sous-projets bloquants transversaux supposant une co-validation de plusieurs partenaires, mais une simple extension fonctionnelle de chacun des modules, une simple modalité supplémentaire des fonctions relevant des aspects « {\it retrieval} » des opérations « CRUD ».
+Les modules développés par DICEN reposeront exclusivement sur ce principe.
+Les clients Web légers du collaboratoire et de la visite virtuelle seront alors les premiers « modules » consommateurs des APIs définies par le composant serveur exposant la base augmentée (voir \in[terme:base]).
+
+Remarquons que ces APIs complètes « brutes » devront s'accompagner d'une documentation publique à destination des développeurs de l'écosystème e-ReColNat précisant la sémantique et la syntaxe des ressources structurées qu'elles permettent de récupérer (voir {\it infra}).
+
+Enfin, sur le plan scientifique, concevoir chaque module comme un fournisseur de données complet autorise à découvrir et inventer de nouveaux usages des données en cours de route.
+À ce jour, nous avons identifié des usages intéressants sur le plan communautaire ou scientifique à la quasi totalité des données produites par les Herbonautes au sein du collaboratoire.
+
+\stopsection
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Les APIs « tags » et « discussion »}]
+
+Note : afin de spécifier nos APIs REST, nous utilisons le langage de description \goto{RAML}[url(http://raml.org/)]. Nous préconisons son utilisation pour toute tâche similaire.
+
+\blank[big]
+\startalignment[center]
+\goto{> Dépôt Github des APIs e-ReColNat+ <}[url(https://github.com/Amleth/erecolnat-wp5-apis)]
+\stopalignment
+
+\stopchapter
+\stoppart
+\stopcomponent
