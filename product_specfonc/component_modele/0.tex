@@ -26,8 +26,9 @@ Les informations sur le modèle exposées dans ce document sont donc partielles,
 \startsection[title={Le modèle « e-RecolNat+ »}]
 
 Le Modèle conceptuel « e-ReColNat augmenté » --- dont le nom est initialement apparu sous les formes « modèle e-ReColNat+ » ou « modèle augmenté », confirmées au fil de plusieurs réunions avec Julien Husson --- inventorie et organise l'ensemble des concepts, propriétés et relations sur lesquels reposent les modules développés par le laboratoire DICEN/WP5 (collaboratoire, visite virtuelle, portail, et toutes les interfaces de contribution et de navigation documentaires et sociales qui les constituent ou qu'ils supposent).
-Le prédicat « augmenté » dénote que ce modèle conceptuel a pour enjeu de fournir des strates d'enrichissements supplémentaires aux entités botaniques identifiées dans le modèle de données du WP2 --- nourrie notamment par l'IPT du GBIF ---, dans le modèle métier des Herbonautes v2, et plus généralement, dans les modèles métier de l'ensemble des applications liées à e-ReColNat, les « augmentations » afférentes pouvant être d'ordre documentaire et social.
-Il contient toutefois des entités qui lui sont propres ; pour exemples, les tags, les discussions, ou encore les entités convoquées dans les visites virtuelles, chacun de ces concepts étant lié à une ou plusieurs entités plus directement botaniques issues des modèles métier des applications du Muséum et des autres partenaires.
+Le prédicat « augmenté » dénote que ce modèle conceptuel a pour enjeu de fournir des strates d'enrichissements supplémentaires aux entités botaniques identifiées dans le modèle de données du WP2 --- nourrie notamment par l'IPT du GBIF ---, aux objets des Herbonautes v2, et plus généralement, aux objets métier de l'ensemble des applications liées à e-ReColNat.
+Les « augmentations » afférentes peuvent être d'ordre documentaire et social.
+Il contient toutefois des entités qui lui sont propres ; pour exemples, les tags, les discussions, ou encore les entités convoquées dans les visites virtuelles, chacun de ces concepts étant liés à une ou plusieurs entités plus directement botaniques issues des modèles métier des applications du Muséum et des autres partenaires.
 Ce modèle procède, d'une part, de l'analyse des pratiques et discours de botanistes professionnels et amateurs\footnote{Menée par Lisa Chupin.}, et d'autre part, d'une analyse plus globale des gestes savants portant sur des documents multimédias hyperliés en contexte de travail coopératif mettant en jeu les compétences scientifiques du laboratoire DICEN.
 
 \stopsection
@@ -36,7 +37,7 @@ Ce modèle procède, d'une part, de l'analyse des pratiques et discours de botan
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={La base « e-ReColNat+ »},reference=terme:base]
 
-La Base de données « e-ReColNat augmentée » réalise la persistance des informations identifiées par le modèle e-ReColNat+ (les informations constituant leur identité, leurs propriétés intrinsèques, les données qui les définissent et leurs sont directement rattachées, ainsi que les relations qu'elles entretiennent les unes avec les autres).
+La Base de données « e-ReColNat augmentée » réalise la persistance des objets identifiées par le modèle e-ReColNat+ (les informations constituant leur identité, leurs propriétés intrinsèques, les données qui les définissent et leurs sont directement rattachées, ainsi que les relations qu'elles entretiennent les unes avec les autres).
 Différentes APIs (d'extraction et d'écriture) seront proposées pour rendre possible l'exploitation de certaines fonctions de cette base au sein de l'ensemble des modules du portail\footnote{Et peut-être au-delà de ce périmètre, si cela s'avère pertinent.}.
 Voir \in[part:api].
 
@@ -60,13 +61,13 @@ Les concepts présentés ici, qui sont très abstraits, seront exemplifiés en \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Entité abstraite Recolnat (EAR)}]
 
-Le concept d'Entité Recolnat abstraite fournit le type fondamental du modèle e-ReColNat+ dont découle tout objet d'intérêt (à l'exception des ESA, voir \in[model:base:esa]).
+Le concept d'entité Recolnat abstraite fournit le type fondamental du modèle e-ReColNat+ dont découle tout objet d'intérêt (à l'exception des entités scientifiques abstraites, voir \in[model:base:esa]).
 Ce type se définit par les caractéristiques intrinsèques et relationnelles suivantes (voir figure \in[f:uml:entities]) :
 
 \startitemize
 \item Une EAR possède un identifiant e-ReColNat+ qui lui confère une identité stable au sein du système indépendamment de son type métier concret.
-\item La création d'une EAR est située : tout objet sait a quel date, par qui (c'est-à-dire par quel utilisateur e-ReColNat) et dans quel module ou lieu du portail (collaboratoire, visite virtuelle, réseau social, herbonautes, etc.) il a été créé.
-\item Une EAR peut être associée à une Entité scientifique abstraite (voir \in[model:base:esa]), et donc se rapporter à quelque chose qui existe en dehors de son module d'origine voire en dehors du système d'information e-ReColNat.
+\item La création d'une EAR est située : tout objet sait à quel date, par qui (c'est-à-dire par quel utilisateur e-ReColNat) et dans quel module ou lieu du portail (collaboratoire, visite virtuelle, réseau social, Herbonautes, etc.) il a été créé.
+\item Une EAR peut être associée à une entité scientifique abstraite (voir \in[model:base:esa]), et donc se rapporter à quelque chose qui existe en dehors de son module d'origine voire en dehors du système d'information e-ReColNat.
 \item Une EAR peut se rapporter à une ou plusieurs EARs cibles (voir lien réflexif {\tt isAbout/relatedEntities} sur le diagramme de la figure \in[f:uml:entities]).
 Ce lien dénote le positionnement fondamentalement annotationnel/critique du modèle e-ReColNat+, tout objet pouvant être relié à un autre par une relation hyperdocumentaire située et qualifiée (voir \in[model:base:situation]).
 \stopitemize
@@ -77,8 +78,8 @@ Ce lien dénote le positionnement fondamentalement annotationnel/critique du mod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Entité scientifique abstraite (ESA)},reference=model:base:esa]
 
-Une Entité scientifique abstraite représente un objet existant dans une base de données extérieure (base agrégée du WP2, ou toute autre base scientifique).
-L'identité d'une ESA se compose de deux propriétés : un {\tt type} renvoyant à la base de données scientifique de provenance, et un identifiant {\tt id} à valeur dans cette base\footnote{Il relève de la responsabilité des vues de construire des URLs d'accès effectif aux objets scientifique externes sur la base de ces deux champs.}.
+Une entité scientifique abstraite représente un objet existant dans une base de données extérieure (base agrégée du WP2, ou toute autre base scientifique).
+L'identité d'une ESA se compose de deux propriétés : un {\tt type} renvoyant au type de l'objet dans sa base de données scientifique de provenance, et un identifiant {\tt id} à valeur dans cette base\footnote{Il relève de la responsabilité des vues de construire des URLs d'accès effectif aux objets scientifique externes sur la base de ces deux champs.}.
 Tout objet extérieur à la base e-ReColNat+ peut ainsi être désigné de manière univoque.
 
 \stopsection
@@ -87,7 +88,7 @@ Tout objet extérieur à la base e-ReColNat+ peut ainsi être désigné de mani�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Situation},reference=model:base:situation]
 
-La classe d'association {\tt Situation} telle qu'elle apparaît sur le diagramme de la figure \in[f:uml:entities] fournit un contexte à la relation {\tt isAbout} réflexive des EARs susmentionnée.
+La classe d'association {\tt Situation} telle qu'elle apparaît sur le diagramme de la figure \in[f:uml:entities] fournit un contexte à la relation réflexive {\tt isAbout} des EARs susmentionnée.
 Chaque instance de cette relation est ainsi enrichie en premier lieu d'un type (propriété {\tt relationType}), dénotant la sémantique du lien documentaire ou critique qu'elle établit :
 
 \startitemize
@@ -117,13 +118,13 @@ Plus généralement, le couplage des Situations et des liens typés inter-EARs p
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Sous-types d'EARs}]
 
-Outre les Situations, qui ont un statut particulier du fait de leur fonction d'opérateurs de contextualisation de l'ensemble des opérations de mise en relation permises par le système, les EARs se déclinent en deux sous-types principaux : les Entités feuilles abstraites Recolnat et les Entités composites abstraites Recolnat.
+Outre les Situations, qui ont un statut particulier du fait de leur fonction d'opérateurs de contextualisation de l'ensemble des opérations de mise en relation permises par le système, les EARs se déclinent en deux sous-types principaux : les entités feuilles abstraites Recolnat et les entités composites abstraites Recolnat.
 Ces entités, présentées {\it infra}, renvoient au \goto{patron de conception « composite »}[url(http://en.wikipedia.org/wiki/Composite_pattern)].
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Entité feuille abstraite Recolnat (EFAR)}]
 
-Une Entité feuille abstraite Recolnat représente une information monadique.
+Une entité feuille abstraite Recolnat représente une information monadique.
 Le diagramme de la figure \in[f:uml:entities] en donne les exemples suivants : commentaire simple, transcription, détermination, nom vernaculaire, coordonnées géographiques.
 Dans tous ces cas, le contenu de l'EFAR est indivisible, n'admet aucune sous-partie dotée d'une identité propre et jouissant d'un certain degré d'autonomie.
 
@@ -131,7 +132,7 @@ Dans tous ces cas, le contenu de l'EFAR est indivisible, n'admet aucune sous-par
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Entité composite abstraite Recolnat (ECAR)}]
 
-Une Entité composite abstraite Recolnat admet un ensemble d'EAR définies comme ses sous-parties.
+Une entité composite abstraite Recolnat admet un ensemble d'EAR définies comme ses sous-parties.
 Les types concrets métier du diagramme de la figure \in[f:uml:entities] héritant d'ECAR illustrent tous cette propriété structurelle : un herbier {\it contient} des planches, une planche {\it se compose de} sous-parties d'intérêt (étiquette, feuille identifiée, etc.), un/e conservateur/trice {\it a la responsabilité} d'un ou plusieurs herbiers, une récolte {\it contient} des spécimens, une collection {\it contient} des herbiers/planches, etc.
 Par ailleurs, à l'instar de la relation {\tt isAbout}, le lien d'agrégation {\tt containedEntities} entre une ECAR et un ensemble d'EARs implique une EAR Situation en tant que classe d'association.
 Ceci permet la contextualisation et la critique de la création des relations d'appartenance (voir \in[model:base:situation]).
