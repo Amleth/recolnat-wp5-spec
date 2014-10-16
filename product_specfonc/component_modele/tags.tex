@@ -1,0 +1,16 @@
+\startchapter[title={Le modèle de tags},reference=model:tags]
+
+\fig{Tags}{Diagramme de classes UML partiel du modèle de tags}{f:uml:entities}{125}
+
+Le caractère générique des entités de base du modèle présentées en \in[model:base] ainsi que l'expressivité des relations qu'elles entretiennent rendent possible la génération aisée de modèles métier « partiels ».
+Par la simple dérivation du concept de tag de celui d'EFAR, nous obtenons un puissant modèle de tagging :
+
+\startitemize
+\item Tout d'abord, un tag se définit intrinsèquement par un nom, et éventuellement une image.
+\item En tant qu'EFAR, un tag peut être mis en relation à une EAR via la relation {\tt isAbout}. Le lien réalisé est alors de type « qualification » (voir \in[model:base:situation]).
+\item Chaque association d'un tag à une EAR est contextualisé par une Situation, ce qui permet de connaître pour un couple <Tag, EAR> donné le nombre et l'identité des utilisateurs ayant réalisé/confirmé l'association afférente ainsi que les dates de ces actions. Cette possibilité du modèle est déterminante pour bâtir des interfaces de statistique d'usage des ressources de classement au sein d'une communauté.
+\item En tant qu'EAR, un tag peut être mis en relation à n'importe quelle autre EAR sous quelque modalité que ce soit. Pour exemple, il est possible d'associer des tags à un utilisateur sous la modalité relationnelle « favoris », ce qui, une fois les fonctions adéquates implémentées, permettrait à tout utilisateur de sélectionner ses tags les plus utilisés sur sa page personnelle.
+\item Remarquons enfin, un peu spéculativement, qu'en tant qu'EAR, un tag peut être taggé, ce qui ouvre le champ à des interfaces d'administration des tags communautaires via des tags « administrateurs ».
+\stopitemize
+
+\stopchapter
