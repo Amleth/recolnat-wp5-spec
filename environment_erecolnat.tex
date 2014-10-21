@@ -190,4 +190,18 @@
 
 \define[4]\fig{\placefigure[here][#3]{#2}{\startalignment[center]\blank\externalfigure[#1][factor=#4]\blank\stopalignment}}
 
+\define\warning{
+  \blank[big]
+  \startnarrower
+    \startframedtext[width=.69\makeupwidth,location=middle]
+    Ce document :
+      \startitemize
+      \item doit être ouvert avec un lecteur PDF supportant les liens hypertextes ;
+      \item est amené à évoluer, les modifications pouvant être suivies sur son \goto{dépôt Github.}[url(https://github.com/Amleth/erecolnat-wp5-spec)]
+      \stopitemize
+    \stopframedtext
+  \stopnarrower
+  \blank[3cm]
+}
+
 \stopenvironment

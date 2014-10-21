@@ -1,30 +1,15 @@
 % https://drive.google.com/?tab=oo&authuser=0#folders/0Bx35P_2eWyd6T1VGU3IyLXNqUzg
 
-\startproject project_erecolnat
 \environment environment_erecolnat
+\startproject project_erecolnat
  
-\setupexternalfigures[directory={product_specfonc/figs}]
+\setupexternalfigures[directory={figs}]
 
 \usepath[{
-	product_specfonc,
-		product_specfonc/component_apis,
-		product_specfonc/component_modele,
-		product_specfonc/component_herbonautes,
-		product_specfonc/component_collaboratoire
+  product_herbonautes,
+	product_specifications,
+		product_specifications/component_modele,
+		product_specifications/component_collaboratoire
 }]
-
-\blank[big]
-\startnarrower
-\startframedtext[width=.69\makeupwidth,location=middle]
-Ce document :
-	\startitemize
-	\item doit être ouvert avec un lecteur PDF supportant les liens hypertextes ;
-	\item est amené à évoluer, les modifications pouvant être suivies sur son \goto{dépôt Github.}[url(https://github.com/Amleth/erecolnat-wp5-spec)]
-	\stopitemize
-\stopframedtext
-\stopnarrower
-\blank[3cm]
-
-\product product_specfonc/0
 
 \stopproject

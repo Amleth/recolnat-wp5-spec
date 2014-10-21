@@ -1,16 +1,16 @@
+\environment environment_erecolnat
 \startcomponent component_apis
-\product product_specfonc
-\startpart[title={Les APIs de l'écosystème e-RecolNat},reference=part:api]
+\product product_herbonautes
+\project project_erecolnat
+
+\startpart[title={Principes généraux des API},reference=part:apis]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\startchapter[title={Principes généraux des API}]
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\startsection[title={Proposition de principe général}]
+\startchapter[title={Proposition de principe général}]
 
 Les différents modules du portail peuvent chacun renvoyer à des acteurs, pratiques et enjeux spécifiques, dépendre de bases de données qui leurs sont propres ou encore être écrits dans des langages différents.
 Cette hétérogénéité fonctionnelle et technique ne doit cependant pas obombrer le fait que les modules sont amenés à manipuler les mêmes concepts et objets documentaires, sociaux et scientifiques (planche, spécimen, détermination, collection, unité de transcription, récolteur/teuse, utilisateur/trice, sous-partie d'intérêt d'une planche, etc.).
@@ -21,9 +21,13 @@ Ces APIs ne devraient pas être conçues en s'adaptant aux spécifications éman
 
 \fig{apis}{Une API complète par module}{f:apis}{max}
 
-\stopsection
+\stopchapter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\startsection[title={Avantages futurs en terme de gestion de projet}]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Avantages futurs en terme de gestion de projet}]
 
 Ce découplage des APIs des modules fournisseurs de données par rapport aux besoins des modules tiers consommateurs de données possède des vertus sur le plan de la gestion de projet.
 Ainsi, si un module fournisseur M1 attend qu'un module consommateur M2 spécifie les termes et structures sous lesquels il souhaite pouvoir accéder à un sous-ensemble des données de M1, l'API proposée par M1 pourra se trouver inadéquate pour une future demande identique émanant d'un autre module M3.
@@ -37,15 +41,15 @@ Remarquons que ces APIs complètes « brutes » devront s'accompagner d'une docu
 Enfin, sur le plan scientifique, concevoir chaque module comme un fournisseur de données complet autorise à découvrir et inventer de nouveaux usages des données en cours de route.
 À ce jour, nous avons identifié des usages intéressants sur le plan communautaire ou scientifique à la quasi totalité des données produites par les Herbonautes au sein du collaboratoire.
 
-\stopsection
+\stopchapter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\startchapter[title={Les APIs « tags » et « discussions »}]
+\startchapter[title={L'API « tags »}]
 
-Note : afin de spécifier nos APIs REST, nous utilisons le langage de description \goto{RAML}[url(http://raml.org/)]. Nous préconisons son utilisation pour toute tâche similaire.
+Note : afin de spécifier nos APIs REST, nous utilisons le langage de description \goto{RAML}[url(http://raml.org/)], et préconisons son utilisation pour toute tâche similaire.
 
 \blank[big]
 \startalignment[center]
@@ -54,4 +58,5 @@ Note : afin de spécifier nos APIs REST, nous utilisons le langage de descriptio
 
 \stopchapter
 \stoppart
+
 \stopcomponent
