@@ -1,1 +1,0 @@
-SumatraPDF product_specfonc.pdf

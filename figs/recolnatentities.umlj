@@ -11309,7 +11309,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFIwM/4ywczfpU="
 							},
-							"name": "Reply",
+							"name": "Message",
 							"ownedElements": [
 								{
 									"_type": "UMLGeneralization",
@@ -12866,7 +12866,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Reply",
+											"text": "Message",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -15215,6 +15215,8 @@
 								"$ref": "AAAAAAFJGFz0BEXIE0U="
 							},
 							"wordWrap": false,
+							"suppressAttributes": null,
+							"suppressOperations": null,
 							"showMultiplicity": true,
 							"showOperationSignature": true,
 							"attributeCompartment": {
@@ -16352,6 +16354,8 @@
 								"$ref": "AAAAAAFJGI77X59toPY="
 							},
 							"wordWrap": false,
+							"suppressAttributes": null,
+							"suppressOperations": null,
 							"showMultiplicity": true,
 							"showOperationSignature": true,
 							"attributeCompartment": {
