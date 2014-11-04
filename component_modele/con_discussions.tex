@@ -18,11 +18,11 @@ Le modèle proposé {\it infra} répond à cette exigence.
 
 \fig{Discussions}{Diagramme de classes UML partiel du modèle de discussions}{f:uml:entities}{125}
 
-Dans les termes du modèle e-ReColNat+, une discussion est un cas particulier d'ECAR, ce qui lui permet d'agréger comme ses sous-partie un ensemble de messages, qui sont des EFARs.
+Dans les termes du modèle e-ReColNat+, une discussion est un cas particulier d'ECAR, ce qui lui permet d'agréger comme ses sous-partie un ensemble de réponses, qui sont des EFARs.
 Étudions les possibilités ouvertes par cette modélisation :
 
 \startitemize
-\item En tant qu'EAR, les discussions comme les messages possèdent un/e utilisateur/trice créateur/trice, une date de création, et gardent trace du module ayant accueilli leur création. Ce dernier point permet non seulement d'amorcer une discussion portant sur un objet botanique dans un module et de la poursuivre dans un autre, mais, sur chaque écran de quelque module que ce soit représentant cette discussion, chaque message peut indiquer le module dans lequel elle a été formulée.
+\item En tant qu'EAR, les discussions comme les réponses possèdent un/e utilisateur/trice créateur/trice, une date de création, et gardent trace du module ayant accueilli leur création. Ce dernier point permet non seulement d'amorcer une discussion portant sur un objet botanique dans un module et de la poursuivre dans un autre, mais, sur chaque écran de quelque module que ce soit représentant cette discussion, chaque réponse peut indiquer le module dans lequel elle a été formulée.
 \item En tant qu'EAR et par la relation {\tt isAbout}, une discussion peut porter (et dans les faits, porte effectivement) sur une autre EAR (par exemple, une entité botanique).
 \item Les discussions étant rattachées à des types concrets métier (planche, spécimen, étiquette, récolteur/trice, mission, etc.), le modèle rend possible des opérations de recherche de discussions par type d'entité, et donc des écrans dans les applications clientes de type « Les dernières discussions portant sur les planches ».
 \stopitemize

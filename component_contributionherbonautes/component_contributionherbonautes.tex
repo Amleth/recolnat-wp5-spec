@@ -1,0 +1,427 @@
+\environment environment_erecolnat
+\startcomponent component_contributionherbonautes
+
+\startpart[title={Recueil de propositions pour la spécification des Herbonautes v2}]
+
+	\page
+	\startframedtext[width=0.9\makeupwidth,location=middle]
+	{\bf
+	Cette partie est un brouillon de travail destiné à susciter des commentaires et des échanges entre les différent-e-s auteur-e-s prenant part à la rédaction des spécifications fonctionnelles de Herbonautes.
+
+	\startitemize
+	\item Pour toute question relative au modèle de tags et aux fonctions de discussion, contactez Thomas Bottini (thomas.bottini@cnam.fr).
+	\item Pour toute autre question relatives aux fonctions ou interfaces, contactez Lisa Chupin (lisa.chupin@cnam.fr).
+	\stopitemize
+	}
+	\stopframedtext
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input discussionsherbonautes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Une version paramétrable}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Analyse des besoins}]
+
+Nous avons besoin d'un logiciel de base capable de générer des sites de transcription dits « clones ». Cela rendre possible de travailler sur d'autres types d'images que des herbiers : images d'autres collections (entomologie par exemple) ou de carnets de récolte. Cela suppose de rendre de multiples paramètres configurables afin de pouvoir prendre en charge d'autres processus de transcription associés à d'autres algorithmes d'allocation des images et règles de validation des transcription. 
+
+Un paramétrage de premier niveau permettra de fixer les possibles au sein d'un de ces sites de transcription. Il fournira un canevas prototypal adapté au métier de base du clone : par exemple la transcription de documents botaniques ou entomologiques. Par ailleurs il sera possible ou non, selon le choix du commanditaire du site, de proposer des missions plus ouvertes dès le début du site ou quelques années après le début de son exploitation. Le cas échéant, les missions pourront être paramétrées différemment en fonction des besoins des chefs de mission (c'est un deuxième niveau de paramétrage).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Les paramètres configurables}]
+
+\startsubsection[title={Au niveau du site}]
+
+On appellera moteur une interface de configuration des paramètres de plus haut niveau qui définissent l'identité du site, en fonction des gestes et besoins propres du métier (ex : l'entomologie pour les entomonautes...). Les paramètres à configurer sont :
+
+\startitemize
+\item le modèle par défaut des missions : il pourrait comprendre des champs que, par défaut, tous les bénévoles devraient compléter dans toutes les missions du site. 
+\item les règles de validation des transcriptions des bénévoles 
+\item les règles de récompense du travail des bénévoles (choix des badges et des règles d'attribution)
+\item le matériel pédagogique commun (tutoriel, démonstration)
+\item les règles propres aux discussions (les catégories des messages)
+\item l'origine du ou des corpus d'images où les chefs de mission vont puiser. Plus généralement, les données d'entrées : images + champs associés issus du processus de numérisation en amont ou autres processus en amont.
+\item {\em la provenance et la destination des données collectées est à configurer}
+\item la destination des données produites par les bénévoles à propos des images
+\item le titre du site, les couleurs/polices du titre, le fond d'écran
+\item images, textes, tutoriel (sous forme de vidéo, ou d'animation) de la page d'accueil, et autres paramètres de l'engagement dans le site (paramètre définissant le choix de certaines missions à afficher dans la page d'accueil)
+\item la définition des droits des contributeurs et animateurs : modalité d'accès au statut de chef de mission (= droits sur la configuration et l'animation de la mission), d'administrateur (= droits sur le « moteur »), d'animateur (= droits spécifiques à la gestion des outils d'animation scientifque et des forums de discussion)
+\item les paramètres de validation d'une mission avant sa mise en ligne
+
+\stopitemize
+
+\startsubsection[title={Au niveau de la mission}]
+
+L'interface de création de mission permettra de régler différents paramètres :
+
+\startitemize
+\item les tutoriels spécifiques à chaque mission, qui permettront que chaque mission donne lieu à des consignes spécifiques
+\item les champs, types de valeurs, valeurs par défaut, référentiels servant de menu déroulant pour un champ
+\item les modalités d'obtention des droits parmettant de remplir certains champs, par exemple à partir du nombre de contributions selon le modèle actuel.
+\item les règles de validation des informations des champs supplémentaires par rapport au modèle prédéfini pour la mission
+\stopitemize
+
+\startsubsection[title={Au niveau de l'interface de transcription}]
+
+\startitemize
+\item les liens vers des ressources, des rubriques d'aide 
+\item les bulles d'aides associées aux champs définis pour une mission donnée
+\item les modalités de validation de l'information pour les champs spécifiques à certaines missions
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Interface de préparation de missions paramétrables}]
+
+L'interface de préparation des missions permet de configurer les paramètres de l'interface de transcription. Le chef de mission peut :
+
+\startitemize[n]
+
+\item Proposer des champs présents dans l'interface de transcription.
+Leur valeur est à compléter en texte libre ou à partir de menus déroulants. Les valeurs proposées par les menus déroulant sont entrées par le chef de mission, suivant ou non un référentiel (de termes géographiques ou taxinomiques par exemple). Il faudra donc pouvoir entrer un référentiel comme liste de valeurs proposées dans un menu déroulant pour un champ.
+
+\item Proposer des cases à cocher pour entrer des informations complémentaires prédéfinies. Par ex : plante cultivée ; nom du spécimen incohérent avec l'étiquette. Ces cases peuvent être présentées comme une palette de cases à cocher accessibles par un menu déroulant. Elles correspondent à des champs présents dans le collaboratoire mais elles permettent de renseigner ces informations ponctuellement sans passer dans le collaboratoire pour le faire. 
+
+Toutes ces cases comme tous les champs peuvent faire l'objet de commentaires dans l'interface de transcription et être taggés librement par les contributeurs.
+
+\item Proposer des consignes à réaliser dans le collaboratoire. Comme le collaboratoire n'existe pas encore, cela pourra faire l'objet d'un développement lié à une évolution de la version V2. 
+
+En fonction des paramètres définis au niveau du « moteur » du site, le chef de mission peut ou doit s'appuyer sur une interface de gestion de mission pré-configurée qui prend la forme d'un modèle de mission. Il précise dans ce cas le lot d'image et des champs complémentaires à faire renseigner. Il peut mettre en lien un tutoriel spécifique à sa mission. Il définit aussi l'ordre dans lequel sont proposés les champs et actions de l'espace de transcription. Il précise le texte des infobulles sur l'espace de transcription. 
+Le paramétrage du moteur du site peut aussi le laisser reconstruire une mission en faisant varier davantage de paramètres. 
+
+L'interface de préparation de mission comprend un bouton « soumettre la mission pour validation ». Cela rend possible la modération des missions proposées.
+
+\stopitemize
+
+{\em
+De l'étude des commentaires dans la V1 ressortent quelques constats à prendre en compte pour le paramétrage des missions de la V2 : (à préciser avec les chefs de mission, Marc, Véro) :
+
+\startitemize
+\item assouplir le format de date compte tenu des inscriptions trouvées sur les étiquettes
+\item fournir un champ permettant de compléter un numéro de récolte
+\item fournir un champ portant sur le nom du spécimen
+\item fournir un champ portant sur le propriétaire de l'herbier d'où vient le spécimen
+\item créer une case plante cultivée
+\item créer une case pas d'information pour le champ géolocalisation
+\item créer une case photo inutilisable (associée comme les autres cases à la possibilité de commentaire permettant une justification)
+\stopitemize
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Interface de transcription}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Analyse des besoins}]
+
+Il faut pouvoir associer au spécimen des remarques non prévues par les champs définis par la mission.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Éléments de l'interface},reference=ihmtranscription]
+
+Chaque planche donne lieu à :
+
+\startitemize[n]
+
+\item {\em Des annotations prédéfinies.}
+Elles sont prédéfinies pour une mission donnée par le chef de mission. Par exemple :
+\startitemize
+\item renseigner la valeur d'un champ (ex : sélectionner un pays dans la liste, transcrire une localité). Le nombre et la nature des champs sont définis par le chef de mission.
+\item cocher une case pour signaler une information demandée par le chef de mission. Par exemple, « photo inutilisable », ou « cette planche contient des traces d'œufs ».
+\stopitemize
+
+\item {\em Des discussions.}
+Voir \in[discussions].
+
+\item {\em Des tags.}
+Les tags peuvent être apposés à tout objet d'intérêt, plus précisément dans le cas des Herbonautes, à un objet transcrit ou à transcrire (une image), ou à un message associé à un champ.
+L'espace personnel (voir section spécifique) regroupe les planches taggées par l'utilisateur.
+
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Composition de l'interface}]
+
+Chaque champ de l'interface de transcription donne lieu à une infobulle paramétrable pour apporter une aide sur la façon dont le champ doit être rempli. (Le chef de mission peut aussi décider de faire disparaître cette infobulle).
+L'interface de transcription fournit un lien vers un menu regroupant des ressources utiles à la transcription (bouton « ressources utiles »).
+Les boutons des ressources, aide, retour dans l'espace de transcription, seront présentés comme des icônes toujours au même endroit de l'interface de transcription et des pages spécimen.
+nb) L'explication du sigle concernant le règlement des conflits ne doit pas apparaître quand l'herbonaute n'a pas encore eu à faire à des conflits : il ne comprend pas. Cette explivation pourrait apparaître seulement quand un conflit se pose et qu'elle doit être effectivement utilisée.
+
+Proposition d'évolution de la V2bis : Un bouton « ajouter d'autres informations » sur le spécimen ouvrira l'interface de transcription du colaboratoire. Il est possible de ne faire apparaître ce bouton qu'à partir d'un certain niveau de contribution.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Autres fonctions de communication}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Analyse des besoins}]
+
+Dans la V1, les discussions des missions servent à avoir un échange avec le chef de mission et des réponses immédiates, alors que les commentaires laissés sur les spécimens ne sont vus que par ceux qui contribuent sur les mêmes spécimens.
+Les discussions associées à des spécimens ou à des missions en particulier doivent pouvoir resservir. Pour cela il faut les décorréler de leur contexte d'origine, sans casser pour autant ce lien par ailleurs utile.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Messagerie interne}]
+
+\startitemize
+\item Il sera possible de s'envoyer des messages privés entre contributeurs.
+\item Il sera possible d'envoyer un message privé au chef de mission, et pour le chef de mission de répondre en privé au contributeur.
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Forum général des Herbonautes}]
+
+Il comporte deux sections :
+Agrégation des commentaires portant sur des objets (missions, planches) avec des catégories provoquant leur agrégation dans l'espace général de discussion.
+Les autres discussions dans un forum avec des sous sections spécifiques définies par les modérateurs. 
+
+On peut facilement citer une réponse de ces espaces de discussions, pour appuyer une réponse à un commentaire, qui a lieu dans l'espace de discussion mission ou dans une discussion dans l'espace de la planche, pour éviter par exemple aux chefs de mission de répéter les mêmes conseils.
+
+L'obtention du droit de modération pourrait être modulable. Ces modérateurs pourraient être des chefs de missions, des contributeurs ayant atteint un certain nombre de contributions, ou des personnes autorisées par les chefs de mission par exemple. 
+La structuration de cet espace de discussion en sous-espaces différents sera revue au fur et à mesure par les modérateurs. Il comportera par exemple un forum de ressources utiles mobilisées par les herbonautes.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Outils documentaires}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Espace personnel}]
+
+Outre les informations sur le profil de l'utilisateur déjà présente dans la V1, l'espace personnel comprend les « points » obtenus par participation aux quiz ou par le fait d'avoir apporté des réponses aux questions d'autres contributeurs.
+L'espace personnel donne la liste des spécimens déjà travaillés, dite par exemple « mes spécimens ». Il est possible de marquer certains de ces spécimens, à partir de tags. La liste « mes spécimens » est organisée à partir des tags que j'y ai associés. Des tags pourront être définis en amont, par défaut.
+
+On peut consulter toutes les informations liées aux spécimens marqués comme « mes spécimens », dans une présentation identique à celle de l'espace des objets transcrits (tableau récapitulatif des informations pour chaque spécimen).
+Il est possible de faire des recherches dans « mes spécimens » par tags, à partir d'un moteur de tag à préciser, et à partir du moteur de recherche. Prévoir deux boutons donnant accès à chacun de ces deux types de recherches dans un emplacement à définir.
+
+Le paragraphe ci-dessous propose à titre illustratif des tags qui pourraient être créés. Le tag « modèle » pourra désigner les spécimens sur lesquels je m'appuie régulièrement pour trouver certaines informations, illustrer certaines règles de transcription. Des tags pourraient être créés automatiquement dans mes spécimens : les spécimens qui n'ont pas encore été complétés et que mon niveau de contribution m'autorise à compléter.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Page objet transcrit}]
+
+Elle affiche l'image du spécimen. Il est possible de zoomer sur cette image sans passer par l'interface de transcription. 
+Le point suivant est à discuter : la page spécimen permet-elle aussi de transcrire des champs au cas par cas ? 
+
+Les valeurs affichées pour chaque champ associé à l'objet sont configurables au niveau du « moteur » ou de la configuration de la mission : on peut choisir que les valeurs apparaissent ou non tant qu'elles n'ont pas été validées (pastille verte) pour maintenir l'analyse des objets en aveugle.
+
+La page présente aussi une mention indiquant si le spécimen est ouvert à la collaboration des herbonautes. Cette mention prend pour valeur « mission en cours » ou « validé ».
+
+Les messages et discussions concernant une même planche (et ses différents champs à remplir) sont consultables en même temps dans la page spécimen.
+
+La page spécimen comporte aussi un bouton « contribuer » et un bouton Ressources, donnant accès à une liste paramétrable de liens avec une infobulle « de quoi s'agit-il ». Par exemple : lien vers l'espèce dans tropicos + bulle « qu'est-ce que Tropicos »
+
+Évolutions possibles de ces pages spécimens (formulations à préciser):
+\startitemize
+\item Bouton « voir les planches correspondant à la même espèce dans les autres collections du réseau Recolnat ».
+\item Bouton « voir le spécimen dans le collaboratoire »  
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Rercherche avancée}]
+
+Il est possible de faire des recherches dans l'espace des objets déjà traités. Ce sont des recherches multichamps permettant de chercher par exemple seulement dans les contributions que j'ai réalisées, ou que tel contributeur a réalisé, seulement dans telle région par exemple. Il est possible de faire des recherches dans le texte des messages, discussions, et des valeurs des champs transcrites.
+Le menu de l'accès rapide à la recherche est conservé, ses fonctions sont étendues.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Espace des objets déjà traités}]
+
+Il s'agit d'un espace où l'on voit toutes les planches déjà transcrites, avec les tags associés par les contributeurs, et les discussions marquées par leur index.
+On peut penser une organisation par défaut des planches selon les missions dont elles ont fait parties.
+Mais il faut aussi permettre des recherches par les autres paramètres dans ces planches déjà traitées : par les régions de récolte, les récolteurs, les années de récolte.
+
+Possibilité d'évolution : il sera possible d'étendre la recherche dans cet espace à une recherche dans la base R+ quand elle existera.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Liens vers des ressources internes & externes}]
+
+L'interface de transcription fait un lien vers des pages ressources. Une icône « lien vers des aides et ressources » [titre à préciser] peut y être consacrée. Elle affiche un menu qui contient par exemple :
+
+\startitemize
+\item les consignes
+\item les forums de discussions sur les consignes
+\item la page du spécimen / les discussions mentionnant le spécimen
+\item les discussions de la mission
+\item les ressources utiles du portail Recolnat : pages sur les récolteurs, collections...
+\item la banque de ressources collaborative sur recolnat (recherche d'étiquettes à rapprocher de celles que l'on étudie.
+\stopitemize
+
+Quand on choisit une liste du menu apparaît une présentation de la ressource (texte rapide, besoins des Herbonautes auxquelles la ressource répond, image, lien hypertexte).
+Ce menu ressources est paramétrable. (Il est difficile de les définir à priori, il faut voir quelles discussions et ressources sont utiles)
+
+Suggestion : chaque contributeur pourrait paramétrer le menu de sa liste de ressources personnelles qui lui est présentée dans son espace de transcription.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Autres outils}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Faciliter le zoom}]
+
+\startitemize
+\item par défaut, faire apparaître la planche un peu plus grand
+\item empêcher que l'on puisse zoomer hors de la planche et la perdre (dans le quadrillage grisé)
+\item préciser (dans une bulle ou autre...) qu'il faut cliquer sur la zone à agrandir (par exemple « cliquer sur l'étiquette pour l'agrandir »)
+\item prévoir des options de zoom :
+\startitemize
+	\item régler la taille du zoom par défaut
+	\item régler la position du zoom par défaut (ex : coin inférieur gauche)
+\stopitemize
+\stopitemize
+
+L'interface de transcription pourrait proposer de travailler sur le spécimen avec d'autres outils qui apparaîtraient quand on clique sur une icône « règle + tournevis ».
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Faciliter la navigation}]
+
+Dans l'interface de transcription, prévoir un bouton « valider les informations et passer au spécimen suivant » pour le dernier champ à compléter. Ce bouton entraîne automatiquement le passage au spécimen suivant quand toutes les informations ont été complétées. 
+Bouton revenir sur mes contributions antérieures. Affichage des numéros des 5 derniers spécimens transcrits, et lien voir tous mes spécimen déjà transcrits qui conduit au profil.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Coordonnées GPS}]
+
+Prévoir de signaler une échelle d'approximation (coordonnées de la localité versus détail permettant de situer exactement la collecte)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Outils de transcription}]
+
+Les menus déroulant pour le récolteur ou le déterminateur doivent être « corrigés » pour ne suggérer que des déterminations valides sans retenir les erreurs entrées au fil des transcription.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Accès, authentification, démonstration}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Analyse des besoins}]
+
+Il faut répondre à un besoin d'accès facilité au site pour les personnes qui le découvrent.Certaines personnes sont réticentes à l'inscription, qui constitue un risque d'abandon de la participation. La V2 doit permettre un mode de participation non inscrit qui facilite son utilisation dans un contexte de démonstration, comme en musée.
+
+L'accès de personnes qui découvrent le site pourrait gagner à avoir lieu vers des missions spécifiques, qui ne demandent pas de maîtriser des consignes supplémentaires, et qui sont plus adaptées au type de contributions demandées au niveau 1. En effet, demander de remplir seulement le pays quand la mission porte le nom d'un pays pose problème.
+Le descriptif des missions semble être une source d'intérêt, mais en même temps, on constate qu'il peut s'écouler un temps long avant de commencer à contribuer. Certains éléments des missions comme les carte rassemblant les objets géolocalisés sont source d'incompréhension car ils ne comportent pas d'explication pour ceux qui découvrent le site.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Démonstration}]
+
+Les consignes spécifiques seront précisées dans chaque mission, mais les consignes générales doivent faire l'objet d'une explication préalable, commune à toutes les missions, qui justifie le niveau du site « Herbonautes », par rapport à d'autres modules qui pourraient être développés à partir de la même interface.
+En plus d'une icône « AIDE SUR L'INTERFACE » présente à tout moment dans l'interface, une DEMONSTRATION sera crée.
+
+Suggestions pour la démonstration : 
+elle pourra prendre la forme de l'interface de transcription, demandant à l'internaute les mêmes actions, mais avec des corrections de ses réponses à chaque réponse. Les planches proposées sont toujours les mêmes dans cette démonstration.
+Par ailleurs, dans cette première démonstration on expliquerait comment procéder pour le pays, en évoquant seulement les autres niveaux. 
+Une démonstration du même type aurait lieu au début de chaque nouveau niveau.
+Ces démonstrations peuvent être sautées par le contributeur.
+{\em Il faudrait qu'il soit possible au chef de mission de constituer une démonstration spécifique}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Mode non authentifié}]
+
+A chaque fois qu'il est proposé de s'inscrire, il est aussi possible de s'inscrire plus tard et de commencer la contribuer en mode non authentifié.
+Il est précisé qu'il faut se connecter pour que les données soient prises en compte dans la base du musée.
+Le rappel de l'inscription est demandé toutes les 15 contributions par exemple. L'inscription donne accès à des fonctions supplémentaires (commentaires, retenir les images traitées). La contribution s'effectue sur le même modèle que dans les autres missions.
+
+Suggestion : Le non authentifié ne reçoit pas d'alerte, par conséquent, ses réponses « tombent » en cas de contradiction avec des contributeurs authentifiés, ou dès que deux personnes authentifiées sont contre lui, ou à la demande d'un authentifié par un bouton « signalement » --- voir section fonctions de communication. D'autres fonctionnements sont possibles, à préciser.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Le module d'authentification}]
+
+Il sépare plus nettement les fonctions d'inscription et de connexion (en évitant la symétrie et les couleurs identiques).
+Il comporte une explication simple de l'intérêt de l'authentification (compte usager, espace personnel et fonctions supplémentaires facilitant la contribution comme la possibilité de revenir sur les contributions déjà réalisées et d'échanger par commentaires avec les autres contributeurs)
+
+Le module d'authentification pourrait permettre de cocher des cases précisant si l'internaute souhaite recevoir des alertes par mail ou souhaite recevoir par mail les nouvelles du site, ou encore ne souhaite recevoir aucun mail
+
+Cette configuration peut avoir lieu dans la configuration du profil dans l'espace personnel pour ne pas alourdir le module d'authentification.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Modalités d'accès}]
+
+\startsubsection[title={Depuis le portail eReColNat}]
+
+Les « nouvelles missions » des Herbonautes pourront être visibles depuis le portail, car elles sont représentatives du renouvellement des activités proposées.
+En mode authentifié, l'accès aux différentes missions pourra avoir lieu directement à partir du portail, par un descriptif rapide ou un titre associé à une image représentative de la mission associée au bouton participer qui renvoie à l'authentification.
+En mode non authentifié, les missions renverront alors à la page d'accueil des Herbonautes.
+
+\startsubsection[title={Par la page d'accueil des Herbonautes}]
+
+La modalité d'engagement du visiteur novice dans le site est à préciser avec les autres acteurs.
+
+Proposition :
+
+\startitemize
+\item la page d'accueil donne accès à une démonstration « comment ça marche », qui se termine par l'invitation à choisir une mission. (ou qui place directement le contributeur dans une mission : ce point reste à discuter)
+\item la page d'accueil donne aussi accès au descriptif des missions suivi de deux boutons : « contribuer » et « voir le tutoriel général »
+\item le bouton « contribuer » donne accès à l'interface de transcription et au bouton « voir le tutoriel »
+\item peut intervenir à différents endroits et étapes du parcours dans les premières pages du portail et des herbonautes  le module d'authentification : déjà inscrit / non inscrit : inscrivez vous / non-inscrit : inscrivez vous plus tard
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Animation scientifique (à préciser avec le WP6)}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Page statistiques}]
+
+Il faut prévoir une page spécifique pour les statistiques en temps réel, mais aussi les retour de questionnaire et d'analyse sur la communauté, qui pourront aussi faire l'objet d'article de blog.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Page d'accueil}]
+
+Les actualités herbonautes sont automatiquement transmises sur le blog Recolnat ? Si l'on coche une case prévue à cet effet ?
+Le cas échéant, prévoir ces boutons dans l'interface de préparation de mission et de rédaction d'actualité.
+
+La description des missions attire l'attention des contributeurs. Mais les autres onglets sont difficilement compréhensibles pour le visiteur novice. Il faut peut-être laisser les découvrir seulement après les premières contributions à la mission.
+Il faudrait de plus préciser à quoi correspondent les différents onglets. Par exemple avec une bulle « à quoi correspondent les contributions » qui explique qu'il faut « pointer le curseur sur un point pour découvrir quel spécimen a été collecté à cet endroit ».
+Les pages de description des missions pourraient faire l'objet d'un article du blog accessible sur le portail Recolnat.
+
+Prévoir un espace pour les fonctions Contact, Conditions d’utilisation, loi informatique et libertés etc., 
+
+Rendre les sigles des réseaux sociaux cliquables.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Articulation avec le portail eReColNat}]
+
+Les missions doivent-elles être présentes sur la page Recolnat ?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Autres outils d'animation scientifique}]
+
+\startsubsection[title={Une interface de création de quiz}]
+
+Elle permet de sélectionner des images ayant posé des difficultés (à partir de la consultation des commentaires des forums), d'y associer une question et de proposer des solutions sous forme de QCM. 
+Pour chaque question, l'interface permet d'éditer un texte justifiant la bonne réponse.
+Répondre à un quiz pour la première fois peut faire gagner des points, comptabilisés dans mon profil et affichés dans l'espace personnel.
+Répondre à des questions permet aussi de gagner des points. 
+Certaines questions soumises par les internautes peuvent être catégorisées comme « question à X points ». Celui qui y répond remporte la somme.
+Des visites des collections physiques des institutions Recolnat sont recommandées comme une forme de gain pour un nombre de points atteint.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Intégration des données dans la base scientifique (à discuter avec le WP2)}]
+
+La base doit signaler la transcription des spécimens par les herbonautes (versus personnel institutions), et proposer un lien aussi vers la page enrichie le cas échéant.
+Il faut définir les processus d'intégration à la base WP2 des champs qui varient selon les missions, et plus généralement de toutes les données collectées dans les Herbonautes. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startchapter[title={Autres demandes ponctuelles}]
+
+\startitemize
+\item Quiz: corriger l'intitulé de la question 3/4. (préciser « lequel »).
+\item certains contributeurs souhaitent connaître les règles d'obtention des badges
+\stopitemize
+
+\stoppart
+\stopcomponent

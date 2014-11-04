@@ -1,0 +1,151 @@
+\startchapter[title={Les discussions},reference=disc]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Ancrage des discussions},reference=disc:ancrage]
+
+Les Discussions --- au sens du modèle conceptuel qui a été présenté {\em supra} --- doivent pouvoir être créées à trois niveaux :
+
+\startitemize
+\item {\em\bf Au niveau des Missions.}
+Les Discussions rattachées à une Mission portent sur l'esprit de celle-ci, sur les spécificités de ses consignes, ou sur tout autre point portant sur plusieurs des Spécimens qui la composent.
+\item {\em\bf Au niveau des Spécimens.}
+Les Discussions rattachées à un Spécimen portent typiquement sur l'objet botanique présent sur la planche ou sur son étiquette en général, sans viser un Champ à transcrire en particulier.
+\item {\em\bf Au niveau des Champs à transcrire.}
+Chaque Champ à transcrire peut faire l'objet de Discussions lui étant propres, c'est-à-dire ne faisant pas référence au Spécimen sur lequel il est présent ou à la Mission dans le cadre de laquelle ce Spécimen s'inscrit.
+Remarquons que les Discussions liées à un Champs à transcrire sont bien rattachées à celui-ci et non sur aux différentes transcriptions proposées par les Herbonautes.
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Caractérisation des messages & adresse à la communauté}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Catégorisation des Messages},reference=disc:categorie]
+
+Les Discussions constituent le lieu privilégié où adresser une demande d'aide ou de renseignements à la communauté.
+Par ailleurs, elles sont aussi le lieu où des connaissances nouvelles sont apportées par les herbonautes.
+Comme vu {\em supra}, chaque Messages/Réponses peut être associé à une ou plusieurs Catégories dénotant la nature de la demande ou contribution qu'il véhicule.
+Nous proposons les Catégories de suivantes :
+
+\startitemize
+\item message de demande d'aide portant sur les consignes
+\item message de demande d'aide au déchiffrage
+\item message de demande d'aide à l'identification
+\item message de demande de validation/confirmation
+\item message apportant une preuve
+\item message pointant vers une source documentaire
+\stopitemize
+
+Un Message peut être créé sans Catégorie (c'est d'ailleurs le cas le plus fréquent lors d'un échange entre herbonautes). Tout herbonaute peut qualifier un Message existant en lui apposant des Catégories.
+
+Les Catégories permettent de construire des vues générales de tous les messages filtrés par type (\in[disc:recherche]).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Accroître la visibilité d'une Discussion},reference:disc:vis]
+
+Par défaut, les Discussions vivent dans l'espace de la page de l'objet métier auquel elles sont rattachées (Mission, Spécimen, Champ à transcrire).
+Toutefois, un-e herbonaute peut souhaiter conférer une visibilité plus importante à une Discussion, notamment s'il s'agit d'une demande d'aide afin de maximiser ses chances d'avoir une réponse.
+
+Chaque Discussion doit ainsi :
+
+\startitemize
+\item Pouvoir être marquée comme devant également apparaître sur les pages des objets métier de « plus haut niveau » que celui auquel elle est rattaché. Pour exemple : une discussion rattachée à un Spécimen peut être marquée pour apparaître sur la page de la Mission, une discussion rattachée à un Champ à transcrire peut être marquée pour apparaître sur la page de son Spécimen et de la Mission de celui-ci.
+\item Pouvoir être marquée comme devant apparaître dans l'espace des questions non résolues (\in[disc:espaceqnr]).
+\stopitemize
+
+Sur les pages de Mission ou de Spécimen, les Discussions directement rattachées à l'objet consulté et celles qui ont été remontées des nivaux inférieurs afin d'accroître leur visibilité devront être visuellement séparées.
+
+\starthiding$
+\startnarrower[3cm]
+{\em
+Quand un cœur volontaire s'abîme dans le doute,\crlf
+Quand les lettres et feuilles se font énigmatiques,\crlf
+Jaillit alors l'icône enrayant la déroute,\crlf
+Et le monde peut ainsi entendre sa supplique.
+}
+\stopnarrower
+$\stophiding
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Adresse d'un Message à un-e herbonaute}]
+
+En plus de pouvoir bénéficier d'une visibilité accrue, chaque Message doit pouvoir être adressé :
+
+\startitemize
+\item au chef de Mission, ce qui a pour effet de notifier celui-ci via la messagerie interne de l'application (voir {\em infra}) ;
+\item à un-e herbonaute en particulier dont l'identifiant interne au site Herbonautes est connu (même processus que ci-dessus avec le chef de mission).
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Demandes d'aide stéréotypés}]
+
+Afin de faire gagner du temps aux herbonautes se livrant à l'activité de transcription et de faciliter la circulation des connaissances, le système doit rendre possible la création de « demandes d'aide stéréotypées ».
+Certaines Catégories identifiées en \in[disc:categorie]) sont éligibles à ce principe :
+
+\startitemize
+\item demande de validation
+\item demande d'aide au déchiffrage
+\item demande d'aide à l'identification
+\stopitemize
+
+Dans l'interface, chaque Champs à transcrire est équipé d'autant de boutons permettant, en un clic, de créer une nouvelle Disc+ussion incarnant la demande d'aide et contenant un premier Message, lequel est automatiquement titré selon la nature de la demande (c'est-à-dire selon la Catégorie) et l'identité de l'objet métier sur lequel elle porte.
+
+Par ailleurs, les Discussions créées suite à un clic sur ces boutons sont automatiquement rendues visibles aux niveaux de la Mission et de l'espace des Discussions non résolues.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={L'espace des questions non résolues},reference=disc:espaceqnr]
+
+Le système devra proposer un espace des questions non résolues où sera canalisée l'énergie contributive des herbonautes les plus savants, agrégeant l'ensemble des demandes adressées à la communauté ayant émergé lors de l'activité de transcription.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Contextualisation des Discussions}]
+
+Une Discussion exposée dans l'espace des questions non résolue doit être flanquée des informations issues du contexte dont elle provient (Mission, Spécimen, Champ à transcrire, valeurs transcrites) permettant de guider les contributeurs.
+Ainsi, pour chaque Discussion, les informations suivantes doivent apparaître :
+
+\startitemize
+\item Mission
+\item Spécimen (si la Discussion n'est pas rattachée à une Mission)
+\item Champ (si la Discussion n'est pas rattachée à une Mission ou un Spécimen)
+\item auteur-e à l'origine de la demande
+\item titre
+\item si la Discussion porte sur un Champ :
+    \startitemize
+    \item ensemble des valeurs transcrites déjà soumises par les autres herbonautes pour ce Champ
+    \item valeurs déjà transcrites des autres Champs, lesquelles fournissent des opérateurs de contextualisation idéals :
+        \startitemize
+        \item pays/région + géolocalisation exacte déduite de la valeur du champ lieu de récolte transcrit
+        \item année/période/date
+        \item récolteur
+        \item « déterminateur »
+        \item collection
+        \stopitemize
+    \stopitemize
+\item Catégorie (\in[disc:categorie])
+\item marqueur d'urgence calculé automatiquement en fonction de la date courante et de la date de fin de la Mission
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Résolution d'une Discussion},reference=disc:resol]
+
+Il doit être loisible à tout-e herbonaute de marquer une Discussion comme étant « résolue », information qui peut être exploitée par le moteur de recherche des Messages et l'espace des questions non résolues (voir {\em supra} \in[disc:recherche] et \in[disc:espaceqnr]).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Moteur de recherche des Messages},reference=disc:recherche]
+
+Le système devra proposer un moteur de recherche dans l'ensemble des Discussions produites.
+En plus d'une recherche plein texte dans le corps des Messages et les titres des Discussions, celui-ci devra permettre de grouper les Messages selon leur Catégorie (\in[disc:categorie]) et de filtrer les Discussions suivant leur statut résolue/non résolue (\in[disc:resol]).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={L'espace des Discussion}]
+
+Le système doit proposer un espace agrégeant la totalité des Discussions produites dans le système, afin de constituer une base de connaissances tirant partie des Catégories (\in[disc:categorie]) et du moteur de recherche (\in[disc:recherche]).

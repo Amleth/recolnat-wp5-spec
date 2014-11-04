@@ -1,0 +1,18 @@
+digraph G {
+	node [fontname="Cambria" fontsize="15" shape="circle"]
+	edge [fontname="Consolas"]
+
+	T[label="Tag T1" width="2"]
+	R[label="Relationship R1\n\n« isAbout »" width="2"]
+	S[label="Specimen S1" width="2"]
+
+	T[style=filled,fillcolor="lightcyan"]
+	R[style=filled,fillcolor="lightcyan"]
+	S[style=filled,fillcolor="lightcyan"]
+	
+	R -> T
+	R -> S
+	"User U1" -> R[label="Opinion:\n« add »\n\n(24/10/1929)"]
+	"User U2" -> R[label="Opinion:\n« add »\n\n(5/6/1982)"]
+	"User U3" -> R[label="Opinion:\n« add »\n\n(25/12/2015)"]
+}

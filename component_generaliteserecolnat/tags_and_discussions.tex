@@ -1,0 +1,65 @@
+\startchapter[title={Tags & Discussions}]
+
+Ce chapitre propose une version résumée et tronquée de certains concepts du modèle conceptuel sur la base duquel seront construits les modules du portail développés par DICEN. Le document correspondant peut être trouvé sur \goto{cette tâche Chili}[url(http://recolnat.org/chiliproject/issues/70)]\footnote{http://recolnat.org/chiliproject/issues/70}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Propriétés communes aux entités du modèle ReColNat+}]
+
+Les entités métier Tag, Discussion, Message (dont certaines sont détaillées {\em infra} en \in[mcs:disc] & \in[mcs:tags]) jouissent d'un ensemble de propriétés communes, qu'elles héritent d'une entité abstraite non métier ReColNat Abstract Entity (voir diagramme UML \in[f:uml:tag_disc_simplified]) :
+
+\startitemize
+\item Propriété {\tt id} : identifiant unique d'un objet {\em indépendamment de son type}, et {\em à valeur dans l'ensemble des objets créés au sein d'un module}.
+\item Propriété {\tt createdInModule} : identifiant du module (Herbonautes, Collaboratoire, Visites Virtuelles, etc.) dans lequel l'objet a été créé. 
+\item Propriété {\tt createdAt} : date de création de l'objet dans son module de rattachement.
+\item Relation réflexive {\tt isAbout/relatedEntities} : dans le modèle e-ReColNat+, tout objet peut-être « à propos » d'un ou plusieurs autres, quel que soit son type et quels que soient les types des objets vers lesquels il pointe.
+La réalisation d'une mise en relation de deux entités passe par la classe d'association Relationship.
+Cette classe agit comme un noeud intermédiaire permettant de raccrocher des « points de vue situés » d'utilisateurs sur la relation, lesquels sont matérialisés par la classe d'association Opinion (la figure \in[f:graph:tag] expose un exemple complet).
+Notre modèle est par essence hyperdocumentaire, et gagne à être implémenté dans une structure de graphe.
+Cette relation est à la base des Tags et Discussions (voir {\em infra} en \in[mcs:disc] & \in[mcs:tags]).
+\stopitemize
+
+\fig{graph_tag}{
+Un Spécimen S1 est associé à un Tag T1 par l'entremise d'une Relation R1. L'Utilisateur U1 est à l'origine de la création de cette association T1---R1, ainsi qu'en témoigne la date sur l'arc U1---R1. Par la suite, les utilisateurs U1 et U2 ont également promu l'association T1---R1. Cette représentation permet de déterminer le poids social d'un Tag.
+}{f:graph:tag}{300}
+
+\fig{SimplifiedTagsAndDiscussions}{Diagramme de classes UML simplifié des modèles de Tags et de Discussions}{f:uml:tag_disc_simplified}{250}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Présentation du modèle de Discussions},reference=mcs:disc]
+
+En plus des propriétés héritées de ReColNat Abstract Entity, une Discussion possède les propriétés suivantes :
+
+\startitemize
+\item un titre ;
+\item un marqueur indiquant son statut résolue/non résolue (voir {\em infra}) ;
+\item un type (voir {\em infra}).
+\stopitemize
+
+Par ailleurs, une Discussion agrège des Messages, lesquels sont également des ReColNat Abstract Entities, enrichies des propriétés suivantes :
+
+\startitemize
+\item un numéro d'ordre dans la séquence des Messages contenus dans la Discussion ;
+\item un contenu (le corps du message) ;
+\item une catégorie de message (voir {\em infra}).
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Présentation du modèle de Tags},reference=mcs:tags]
+
+La figure \in[f:graph:tag] fournit une illustration du modèle de Tags.
+Soulignons qu'un Tag peut s'appliquer à n'importe quel type de ReColNat Abstract Entity (pas seulement les Spécimens). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={L'API du service de Tags}]
+
+Note : Nous prévoyons d'utiliser le langage de description \goto{RAML}[url(http://raml.org/)] pour spécifier nos APIs REST, et préconisons son utilisation pour toute tâche similaire.
+
+L'API du service de Tags sera bientôt disponible sur le \goto{dépôt Github des APIs ReColNat+}[url(https://github.com/Amleth/erecolnat-wp5-apis)]\footnote{https://github.com/Amleth/erecolnat-wp5-apis}.
