@@ -13,7 +13,7 @@ Les entités métier Tag, Discussion, Message (dont certaines sont détaillées 
 \item Propriété {\tt id} : identifiant unique d'un objet {\em indépendamment de son type}, et {\em à valeur dans l'ensemble des objets créés au sein d'un module}.
 \item Propriété {\tt createdInModule} : identifiant du module (Herbonautes, Collaboratoire, Visites Virtuelles, etc.) dans lequel l'objet a été créé. 
 \item Propriété {\tt createdAt} : date de création de l'objet dans son module de rattachement.
-\item Relation réflexive {\tt isAbout/relatedEntities} : dans le modèle e-ReColNat+, tout objet peut-être « à propos » d'un ou plusieurs autres, quel que soit son type et quels que soient les types des objets vers lesquels il pointe.
+\item Relation réflexive {\tt isAbout/relatedEntities} : dans le modèle ReColNat+, tout objet peut-être « à propos » d'un ou plusieurs autres, quel que soit son type et quels que soient les types des objets vers lesquels il pointe.
 La réalisation d'une mise en relation de deux entités passe par la classe d'association Relationship.
 Cette classe agit comme un noeud intermédiaire permettant de raccrocher des « points de vue situés » d'utilisateurs sur la relation, lesquels sont matérialisés par la classe d'association Opinion (la figure \in[f:graph:tag] expose un exemple complet).
 Notre modèle est par essence hyperdocumentaire, et gagne à être implémenté dans une structure de graphe.
@@ -62,4 +62,4 @@ Soulignons qu'un Tag peut s'appliquer à n'importe quel type de ReColNat Abstrac
 
 Note : Nous prévoyons d'utiliser le langage de description \goto{RAML}[url(http://raml.org/)] pour spécifier nos APIs REST, et préconisons son utilisation pour toute tâche similaire.
 
-L'API du service de Tags sera bientôt disponible sur le \goto{dépôt Github des APIs ReColNat+}[url(https://github.com/Amleth/erecolnat-wp5-apis)]\footnote{https://github.com/Amleth/erecolnat-wp5-apis}.
+L'API du service de Tags sera bientôt disponible sur le \goto{dépôt Github des APIs ReColNat+}[url(https://github.com/Amleth/recolnat-wp5-apis)]\footnote{https://github.com/Amleth/recolnat-wp5-apis}.

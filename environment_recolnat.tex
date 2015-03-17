@@ -1,4 +1,4 @@
-\startenvironment environ_erecolnat
+\startenvironment environment_recolnat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -103,7 +103,7 @@
 \starttypescript[Main]
   \definetypeface[Main][rm][serif][jenson]
   \definetypeface[Main][ss][sans][gill]
-  \definetypeface[Main][tt][mono][gill]
+  \definetypeface[Main][tt][mono][gill][default][rscale=0.85]
 \stoptypescript
 
 % Application
@@ -196,11 +196,13 @@
     \startframedtext[width=.69\makeupwidth,location=middle]
       \startitemize
       \item Ce document faisant usage des liens hypertextes PDF, pour un confort de lecture maximal, assurez-vous que votre lecteur de PDF supporte cette fonction.
-      \item Ce document est amené à évoluer, ses modifications peuvent être suivies sur son \goto{dépôt Github.}[url(https://github.com/Amleth/erecolnat-wp5-spec)]
+      \item Ce document est amené à évoluer, ses modifications peuvent être suivies sur son \goto{dépôt Github.}[url(https://github.com/Amleth/recolnat-wp5-spec)]
       \stopitemize
     \stopframedtext
   \stopnarrower
   \blank[3cm]
 }
+
+\define[1]\ciel{\it«~#1~»}
 
 \stopenvironment
