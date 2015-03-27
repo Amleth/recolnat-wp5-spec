@@ -93,9 +93,9 @@
 
 % A cool font for typewriter
 
-\starttypescript[mono][gill]
-  \definefontsynonym[Mono][name:gillsansstd]
-  \definefontsynonym[MonoBold][name:gillsansstdbold]
+\starttypescript[mono][lmmono]
+  \definefontsynonym[Mono][name:latinmodernmonoregular]
+  \definefontsynonym[MonoBold][name:latinmodernmonoregular]
 \stoptypescript
 
 % Main
@@ -103,7 +103,7 @@
 \starttypescript[Main]
   \definetypeface[Main][rm][serif][jenson]
   \definetypeface[Main][ss][sans][gill]
-  \definetypeface[Main][tt][mono][gill][default][rscale=0.85]
+  \definetypeface[Main][tt][mono][lmmono][default][rscale=0.85]
 \stoptypescript
 
 % Application
@@ -120,6 +120,16 @@
 
 \setupinteraction[state=start]
 \setupcombinedlist[content][interaction=all]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% SYMBOLES
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\define\leafa{{\awto\char57402}~}
+\define\fon{{\awto\char57395}~}
+\define\idea{{\awto\char57448}~}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -196,7 +206,7 @@
     \startframedtext[width=.69\makeupwidth,location=middle]
       \startitemize
       \item Ce document faisant usage des liens hypertextes PDF, pour un confort de lecture maximal, assurez-vous que votre lecteur de PDF supporte cette fonction.
-      \item Ce document est amené à évoluer, ses modifications peuvent être suivies sur son \goto{dépôt Github.}[url(https://github.com/Amleth/recolnat-wp5-spec)]
+      \item Ce document est amené à évoluer, ses modifications peuvent être suivies sur son \goto{dépôt Github}[url(https://github.com/Amleth/recolnat-wp5-spec)].
       \stopitemize
     \stopframedtext
   \stopnarrower

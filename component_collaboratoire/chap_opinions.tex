@@ -1,0 +1,127 @@
+\startchapter[title={Opinions & autorité}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Enjeux}]
+
+Pour ce qui se rapporte à la collecte d'informations, l'écosystème ReColNat+ poursuite un objectif double :
+
+\startitemize
+	\item
+	Permettre aux chercheurs naturalistes de saisir des informations relatives aux entités scientifiques sur lesquelles se porte leur intérêt (cf. \in[c:entites:scientifiques]) dans le cadre de leurs travaux.
+	Le système doit ainsi s'assurer que ces connaissances scientifiques produites par les acteurs dont la compétence est établie sont rendues disponibles au SI du WP2.
+	Par ailleurs, chaque information saisie par un chercheur compétent doit être mentionnée comme telle dans les différents modules ReColNat+, afin d'être nettement distinguée des éventuelles contributions des recolnautes bénévoles.
+	\item
+	Permettre aux récolnautes bénévoles de contribuer aux différentes occasions de récolte de données participatives ouvertes dans le système (transcriptions, noms vernaculaires, diverses informations non scientifiques sur les espèces, identification et localisation de caractères sur les planches, etc.).
+	Cette information est par nature plurielle, au sens où une multiplicité de points de vue potentiellement contradictoire peuvent être formulés au sujet d'une même chose par des individus différents, cette pluralité appelant un processus de sélection instrumentée.
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Représentation de la contribution}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Notions de Relation et d'Opinion},reference=s:relopi]
+
+\fon{} Le système doit décorréler la possibilité d'une Relation sémantique existant entre deux entités (cf. \in[s:entites:relations]) et le fait qu'il puisse exister plusieurs Opinions socialement et temporellement situées et potentiellement divergentes au sujet de cette Relation.
+
+Pour illustrer cette idée abstraite, prenons l'exemple des transcriptions.
+Soient un utilisateur U1 proposant une transcription T1 pour le champ C1 de l'étiquette E1 de la planche P1, un utilisateur U2 proposant une transcription T2 pour C1 (T2 étant différentes de T1) & un utilisateur U3, arrivant après U1, apportant son approbation à T1.
+Dans ce scénario, deux Relations (R1 connectant T1 à C1 et R2 connectant T2 à C1) et trois Opinions (U1 et U3 à propos de R1, U2 à propos de R2) sont constituées.
+Autrement dit, proposer une nouvelle transcription revient à créer un nouvel objet « anonyme » --- la Relation --- représentant le lien entre le champ et la nouvelle contribution, et un objet --- l'Opinion --- signant, datant et qualifiant ce lien.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Notion de Sceau}]
+
+\fon{} Le système doit offrir la possibilité d'associer des affiliations aux utilisateurs, que ces derniers peuvent décider ou non de mettre en jeu lorsqu'ils contribuent.
+
+Pour exemple, un utilisateur scientifique membre du MNHN et membre de l'association des amateurs de {\it Sphagna squarrosa} du Morvan (la fameuse AASSM) doit pouvoir, lorsqu'il produit une nouvelle Opinion, choisir d'associer à celle-ci :
+
+\startitemize
+	\item Le Sceau du MNHN, donnant ainsi une portée institutionnelle à sa contribution.
+	\item Le Sceau de l'AASSM.
+	\item Les deux Sceaux sus-mentionnés.
+	\item Aucun Sceau, faisant ainsi de sa contribution quelque chose de purement individuel et n'engageant aucun collectif.
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Présentation des Opinions}]
+
+\fon{} Le système doit pouvoir afficher les différentes Opinions en tenant compte du contexte de consultation. Ainsi, dans une perspective de recherche de la vérité, seules les Opinions validées (cf. {\it infra}) apparaissent, alors que dans un contexte de résolution d'une mission contributive, toutes les Opinions existantes sont présentées.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Fournir la donnée la plus pertinente}]
+
+\fon{} Le système doit permettre à tout moment de fournir au système d'information (par la suite, SI) du WP2 la donnée la plus pertinente au sujet d'une information scientifique ouverte à la contribution.
+
+La situation décrite en \in[s:relopi] établit qu'il peut exister plusieurs Relations concurrentes portant sur une même information scientifique (un champ peut admettre plusieurs transcriptions, un spécimen plusieurs déterminations, etc.).
+Pour sélectionner la Relation la plus pertinente, nous proposons de nous appuyer sur un calcul reposant sur différents concepts : celui d'{\em accréditation}, et celui de {\em score d'autorité}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Notion d'accréditation}]
+
+\fon{} Le système doit pouvoir représenter le fait que certains utilisateurs jouissent d'un contrôle particulier sur certaines entités au regard de certaines opérations du fait que, dans le monde réel, ils tiennent le rôle de gestionnaire des objets que représentent ces entités.
+
+Pour exemple, le responsable d'une entité collection dispose à ce titre d'une accréditation à changer le nom de celle-ci.
+
+\bigskip
+
+\fon{} Le système doit également permettre aux utilisateurs accrédités sur une entité de conférer tout ou partie de leur pouvoir à d'autres utilisateurs.
+
+Pour exemple, le responsable d'une entité collection peut accorder une accréditation à un scientifique pour travailler sur les planches qui sont sous responsabilité.
+
+\bigskip
+
+Remarque : ne pas disposer d'accréditation sur une entité n'interdit pas à un utilisateur de créer des Relations & Opinions au sujet de celle-ci, seulement, elles seront écartées des candidates potentiels lorsqu'il est question de fournir de l'information pertinente au SI du WP2.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Notion de score d'autorité}] % ∞
+
+\fon{} Le score d'autorité renvoie à l'idée de légitimité scientifique globale à valeur dans la communauté.À chaque utilisateur est associé un score d'autorité.
+
+\leafa{} Pour un scientifique associé à une institution reconnue, ce score est fixé à ∞.
+Le recours à la notation mathématique de l'infini dénote que les contributions d'un scientifique « accrédité » seront toujours plus pertinentes\footnote{Au sens d'une pertinence pour exposer des données au SI du WP2.} que celles d'un récolnaute, d'une part, et qu'une situation ou deux contributions contradictoires façonnées par deux scientifiques est insoluble (il est impossible de comparer deux grandeurs infinies) sans recourir à un autre critère.
+Dans ce dernier cas, nous proposons de sélectionner la contribution la plus fraîche d'un point de vue temporel\footnote{Il est peu probable que ceci conduise à des guerres d'édition.}.
+
+\leafa{} Si un « simple récolnaute » exprime une Opinion au sujet d'une Relation pour laquelle aucune Opinion signée d'un utilisateur de score d'autorité ∞ n'est encore définie (autrement dit, s'il prend parti sur un terrain où les scientifiques n'ont pas encore émis d'avis), et si son Opinion s'avère par la suite :
+\startitemize
+	\item approuvée par un utilisateur dont le score d'autorité est égal à ∞ ou
+	\item confortée par une Opinion convergente créée par un utilisateur dont le score d'autorité est égale à ∞
+\stopitemize
+alors son score d'autorité s'accroît de 1.
+
+\bigskip
+
+Se pose alors la question de la perte de points d'autorité : un récolnaute peut-il voir son score d'autorité diminuer si ses Opinions sont désapprouvées par des scientifiques ?
+Ceci n'apparaît-il pas « un peu dur » ?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Processus de sélection}]
+
+\idea{} Nous proposons d'attribuer à chaque Relation une {\em valeur d'autorité}.
+Celle-ci se définit en premier lieu comme la somme des {\em scores d'autorité} des utilisateurs ayant émis une Opinion sur la Relation.
+Toutefois, on peut décider que seules les Opinions émises par des personnes accréditées entrent dans ce calcul.
+
+Cette base peut admettre différentes variations dont il faut discuter collectivement.
+Voici déjà quelques questions :
+
+\startitemize
+	\item Un récolnaute doit-il recevoir la même quantité de points d'autorité s'il propose une bonne transcription, une bonne localisation géographique, un bon nom vernaculaire, voire quelque chose de scientifiquement plus consistant (une bonne détermination) ?
+	\item La création d'une contribution (qui sera jugée pertinente lors du processus de sélection) ne doit-elle pas apporter plus de points d'autorité que l'approbation d'une contribution (qui elle aussi sera jugée pertinente lors du processus de sélection) ?
+\stopitemize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Statut des Opinions}]
+
+\fon{} Les utilisateurs doivent pouvoir attribuer un statut public/privé à leurs Opinions, afin, respectivement, de les rendre visibles à tous ou de les garder pour eux.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Éléments de modélisation}]
+
+Cf. diagramme de la figure \in[f:uml:base] ({\tt Relationship}, {\tt Opinion} & {\tt Abstract Social Entity}).
