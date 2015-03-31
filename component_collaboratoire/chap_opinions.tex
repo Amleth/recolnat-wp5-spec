@@ -25,7 +25,8 @@ Pour ce qui se rapporte à la collecte d'informations, l'écosystème ReColNat+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Notions de Relation et d'Opinion},reference=s:relopi]
 
-\fon{} Le système doit décorréler la possibilité d'une Relation sémantique existant entre deux entités (cf. \in[s:entites:relations]) et le fait qu'il puisse exister plusieurs Opinions socialement et temporellement situées et potentiellement divergentes au sujet de cette Relation.
+\fon{}
+Le système doit décorréler la possibilité d'une Relation sémantique existant entre deux entités (cf. \in[s:entites:relations]) et le fait qu'il puisse exister plusieurs Opinions socialement et temporellement situées et potentiellement divergentes au sujet de cette Relation.
 
 Pour illustrer cette idée abstraite, prenons l'exemple des transcriptions.
 Soient un utilisateur U1 proposant une transcription T1 pour le champ C1 de l'étiquette E1 de la planche P1, un utilisateur U2 proposant une transcription T2 pour C1 (T2 étant différentes de T1) & un utilisateur U3, arrivant après U1, apportant son approbation à T1.
@@ -35,7 +36,8 @@ Autrement dit, proposer une nouvelle transcription revient à créer un nouvel o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Notion de Sceau}]
 
-\fon{} Le système doit offrir la possibilité d'associer des affiliations aux utilisateurs, que ces derniers peuvent décider ou non de mettre en jeu lorsqu'ils contribuent.
+\fon{}
+Le système doit offrir la possibilité d'associer des affiliations aux utilisateurs, que ces derniers peuvent décider ou non de mettre en jeu lorsqu'ils contribuent.
 
 Pour exemple, un utilisateur scientifique membre du MNHN et membre de l'association des amateurs de {\it Sphagna squarrosa} du Morvan (la fameuse AASSM) doit pouvoir, lorsqu'il produit une nouvelle Opinion, choisir d'associer à celle-ci :
 
@@ -49,14 +51,16 @@ Pour exemple, un utilisateur scientifique membre du MNHN et membre de l'associat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Présentation des Opinions}]
 
-\fon{} Le système doit pouvoir afficher les différentes Opinions en tenant compte du contexte de consultation. Ainsi, dans une perspective de recherche de la vérité, seules les Opinions validées (cf. {\it infra}) apparaissent, alors que dans un contexte de résolution d'une mission contributive, toutes les Opinions existantes sont présentées.
+\fon{}
+Le système doit pouvoir afficher les différentes Opinions en tenant compte du contexte de consultation. Ainsi, dans une perspective de recherche de la vérité, seules les Opinions validées (cf. {\it infra}) apparaissent, alors que dans un contexte de résolution d'une mission contributive, toutes les Opinions existantes sont présentées.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Fournir la donnée la plus pertinente}]
 
-\fon{} Le système doit permettre à tout moment de fournir au système d'information (par la suite, SI) du WP2 la donnée la plus pertinente au sujet d'une information scientifique ouverte à la contribution.
+\fon{}
+Le système doit permettre à tout moment de fournir au système d'information (par la suite, SI) du WP2 la donnée la plus pertinente au sujet d'une information scientifique ouverte à la contribution.
 
 La situation décrite en \in[s:relopi] établit qu'il peut exister plusieurs Relations concurrentes portant sur une même information scientifique (un champ peut admettre plusieurs transcriptions, un spécimen plusieurs déterminations, etc.).
 Pour sélectionner la Relation la plus pertinente, nous proposons de nous appuyer sur un calcul reposant sur différents concepts : celui d'{\em accréditation}, et celui de {\em score d'autorité}.
@@ -64,13 +68,15 @@ Pour sélectionner la Relation la plus pertinente, nous proposons de nous appuye
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Notion d'accréditation}]
 
-\fon{} Le système doit pouvoir représenter le fait que certains utilisateurs jouissent d'un contrôle particulier sur certaines entités au regard de certaines opérations du fait que, dans le monde réel, ils tiennent le rôle de gestionnaire des objets que représentent ces entités.
+\fon{}
+Le système doit pouvoir représenter le fait que certains utilisateurs jouissent d'un contrôle particulier sur certaines entités au regard de certaines opérations du fait que, dans le monde réel, ils tiennent le rôle de gestionnaire des objets que représentent ces entités.
 
 Pour exemple, le responsable d'une entité collection dispose à ce titre d'une accréditation à changer le nom de celle-ci.
 
 \bigskip
 
-\fon{} Le système doit également permettre aux utilisateurs accrédités sur une entité de conférer tout ou partie de leur pouvoir à d'autres utilisateurs.
+\fon{}
+Le système doit également permettre aux utilisateurs accrédités sur une entité de conférer tout ou partie de leur pouvoir à d'autres utilisateurs.
 
 Pour exemple, le responsable d'une entité collection peut accorder une accréditation à un scientifique pour travailler sur les planches qui sont sous responsabilité.
 
@@ -81,7 +87,8 @@ Remarque : ne pas disposer d'accréditation sur une entité n'interdit pas à un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Notion de score d'autorité}] % ∞
 
-\fon{} Le score d'autorité renvoie à l'idée de légitimité scientifique globale à valeur dans la communauté.À chaque utilisateur est associé un score d'autorité.
+\fon{}
+Le score d'autorité renvoie à l'idée de légitimité scientifique globale à valeur dans la communauté.À chaque utilisateur est associé un score d'autorité.
 
 \leafa{} Pour un scientifique associé à une institution reconnue, ce score est fixé à ∞.
 Le recours à la notation mathématique de l'infini dénote que les contributions d'un scientifique « accrédité » seront toujours plus pertinentes\footnote{Au sens d'une pertinence pour exposer des données au SI du WP2.} que celles d'un récolnaute, d'une part, et qu'une situation ou deux contributions contradictoires façonnées par deux scientifiques est insoluble (il est impossible de comparer deux grandeurs infinies) sans recourir à un autre critère.
@@ -117,7 +124,8 @@ Voici déjà quelques questions :
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Statut des Opinions}]
 
-\fon{} Les utilisateurs doivent pouvoir attribuer un statut public/privé à leurs Opinions, afin, respectivement, de les rendre visibles à tous ou de les garder pour eux.
+\fon{}
+Les utilisateurs doivent pouvoir attribuer un statut public/privé à leurs Opinions, afin, respectivement, de les rendre visibles à tous ou de les garder pour eux.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
