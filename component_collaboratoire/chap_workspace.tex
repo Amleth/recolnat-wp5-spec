@@ -3,9 +3,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Organisation et plasticité de l'espace de travail}]
 
-\fon{}
+\exig{}
 Le système doit permettre à l'utilisateur d'organiser librement son espace de travail\footnote{Le rôle de la plasticité structurelle de l'environnement documentaire dans l'activité de lecture savante visant la production de nouvelles connaissances sur la base d'un corpus hétérogène est exploré dans cette \goto{thèse de doctorat}[url(http://amleth.artisiou.com/blog/these)].} :
 
 \startitemize
@@ -20,9 +22,11 @@ Le système doit permettre à l'utilisateur d'organiser librement son espace de 
 	Chaque icône doit avoir une apparence qui dénote sa nature et/ou son contenu.
 \stopitemize
 
-\fon{}
+\exig{}
 Le système doit permettre à un groupe d'utilisateurs souhaitant collaborer autour d'un conteneur de partager les informations de positionnement des objets dans les conteneurs afin de disposer d'un espace d'organisation partagé, les déplacements initiés par chacun étant ainsi vus des autres.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,9 +46,11 @@ Deux scénarios sont alors possibles :
 	Cette {\tt Opn} est concurrentielle : chaque utilisateur membre du groupe peut altérer les positions qu'elle porte.
 	Dans ce scénario, et si une architecture WebSocket est choisie (voir {\it infra}), l'{\tt ASE} groupe permet au serveur de contrôler le {\it broadcast} des nouveaux déplacements vers les contributeurs intéressés.
 	\item
-	Quand un groupe d'utilisateurs souhaite exprimer des avis contraires --- tout en les partageant en lecture seule --- sur la position que doivent occuper des {\tt AE} au sein d'une {\tt ACE}, alors chaque position est portée par un {\tt Opn} signé par un utilisateur identifié.
+	Quand un groupe d'utilisateurs souhaite laisser ses membres exprimer des avis contraires --- tout en les partageant en lecture seule --- sur la position que doivent occuper des {\tt AE} au sein d'une {\tt ACE}, alors chaque position est portée par un {\tt Opn} signé par un utilisateur identifié.
 \stopitemize
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

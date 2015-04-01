@@ -1,10 +1,16 @@
 \startchapter[title={Les types d'entités ReColNat(+)},reference=c:entites]
 
+Ce chapitre liste les types d'objets exposés et offerts à la manipulation dans le Collaboratoire.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Identification des entités d'intérêt}]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Entités sociales}]
 
@@ -15,6 +21,8 @@
 \stopitemize
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Entités scientifiques},reference=c:entites:scientifiques]
 
 \startitemize
@@ -24,11 +32,13 @@
 	\item un herbier
 	\item une planche
 	\item un spécimen
-	\item une détermination à valeur dans un système taxonomique donné
+	\item une détermination à valeur dans un système taxonomique donné (une espèce, un genre, etc.)
 	\item une transcription
 	\item un nom vernaculaire
 \stopitemize
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsection[title={Entités contributives}]
 
@@ -38,49 +48,47 @@
 	\item un fil de discussion
 	\item une réponse dans un fil de discussion
 	\item un détail d'une planche graphiquement localisé (étiquette, etc.) ou d'un spécimen (une feuille, un bourgeon, etc.)
+	\item un contenu texte de petite taille (une annotation, une note, etc.)
 	\item un Tag
 \stopitemize
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Propriétés générales des entités}]
 
+\exig{}
 La création d'une entité ReColNat+ doit être située ; chaque entité doit ainsi garder trace du module au sein duquel elle a été créée ; de la date à laquelle elle a été créée ; de l'identité de son créateur.
 
+\exig{}
+Le système doit pouvoir référencer n'importe quel objet accessible via le Web (publiquement ou via un accès authentifié ReColNat) susceptible de présenter un intérêt scientifique pour les utilisateurs.
+Les entités représentant ces « objets externes » doivent fournir le même niveau d'instrumentation sociale et documentaire que les entités ayant été créées dans ReColNat+.
+Ces entités doivent également connaître le type de l'objet externe qu'elles désignent, afin notamment d'informer les interfaces de la conduite à tenir lorsqu'il est question de les représenter et de les manipuler.
+Il faut également que ces entités soient identifiées par un identifiant à valeur dans la base de données externe dont elles proviennent, afin notamment de pouvoir construire des URLs d'accès.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\startsection[title={Relations entre entités},reference=s:entites:relations]
-
-Les fonctions identifiées dans ce document --- tant les fonctions de navigation dans les données existantes que celles visant la création et l'organisation de contenus --- s'appuient sur un ensemble de relations de base entre les différentes entités.
-Ces relations doivent pouvoir être créées par l'utilisateur ou définies {\it a priori} lors de l'import de données existantes.
-Ainsi :
-
-\startitemize
-	\item
-	Le système doit pouvoir gérer des relations structurelles de type « contenant/contenu » (pour exemple, une collection contient des planches, une planche contient des spécimens, etc.).
-	\item
-	Le système doit pouvoir gérer des relations d'association sémantique entre entités sous des modalités associatives libres, sans restriction sur la nature de ces modalités ou sur celle des entités qu'elles connectent.
-	\item
-	Le système doit pouvoir référencer n'importe quel objet accessible via le Web (publiquement ou via un accès authentifié ReColNat) susceptible de présenter un intérêt scientifique pour les utilisateurs.
-	Les entités représentant ces « objets externes » doivent fournir le même niveau d'instrumentation sociale et documentaire que les entités ayant été crées dans ReColNat+.
-	Ces entités doivent également connaître le type de l'objet externe qu'elles désignent, afin notamment d'informer les interfaces de la conduite à tenir lorsqu'il est question de les représenter et de les manipuler.
-	Il faut également que ces entités soient identifiées par un identifiant à valeur dans la base de données externe dont elles proviennent, afin notamment de pouvoir construire des URLs d'accès.
-\stopitemize
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Éléments de modélisation}]
 
 Le diagramme de la figure \in[f:uml:base] expose les concepts de base du modèle ReColNat+.
-
 Tout objet existant dans ReColNat+ est représenté par la classe {\tt Abstract Entity}.
+Ce modèle permet notamment :
+
+\startitemize
+	\item
+	de représenter des relations structurelles méréologiques (pour exemple, une collection contient des planches, une planche contient des spécimens, etc.) ;
+	\item
+	de représenter des relations d'association dont la sémantique est totalement libre tissées entre entités de diverses natures.
+\stopitemize
 
 \fig{UML_Base}{Diagramme de classes UML simplifié du modèle de base RecolNat+}{f:uml:base}{max}
 
-Raccourcis utilisés dans ce document :
+Raccourcis utilisés dans ce document (cf. diagramme de la figure \in[f:uml:base]) :
 
 \startitemize
 	\item {\tt Abstract Entity} : {\tt AE}
