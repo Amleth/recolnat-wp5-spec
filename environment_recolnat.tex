@@ -127,7 +127,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \define\leafa{{\awto\char57402}~}
+\define\leafa{{\awto\char57402}~}
 \define\exig{\bigskip{\awto\char57395}~}
 \define\idea{\bigskip{\awto\char57448}~}
 
@@ -175,6 +175,7 @@
 \definecolor[hawaiianreef3][h=02857F]
 \definecolor[hawaiianreef4][h=279886]
 \definecolor[hawaiianreef5][h=489F86]
+\definecolor[waterfallsinHawaii][h=F1E7BB]
 
 % Page
 \setupbackgrounds[page][background=color,backgroundcolor=white]
@@ -204,15 +205,36 @@
   \blank[big]
   \startnarrower
     \startframedtext[width=.69\makeupwidth,location=middle]
-      \startitemize
-      \item Ce document faisant usage des liens hypertextes PDF, pour un confort de lecture maximal, assurez-vous que votre lecteur de PDF supporte cette fonction.
-      \item Ce document est amené à évoluer, ses modifications peuvent être suivies sur son \goto{dépôt Github}[url(https://github.com/Amleth/recolnat-wp5-spec)].
-      \stopitemize
+      \leafa{} Ce document faisant usage des liens hypertextes PDF, pour un confort de lecture maximal, assurez-vous que votre lecteur de PDF supporte cette fonction.
+      \bigskip
+      \leafa{} Ce document est amené à évoluer, ses modifications peuvent être suivies sur son \goto{dépôt Github}[url(https://github.com/Amleth/recolnat-wp5-spec)].
     \stopframedtext
   \stopnarrower
   \blank[3cm]
 }
 
 \define[1]\ciel{\it«~#1~»}
+
+\definestartstop[TODO][
+  before={
+    \startbackground[
+      framecolor=hawaiianreef5,
+      background=color,
+      backgroundcolor=waterfallsinHawaii,
+      frame=off, 
+      leftframe=on,
+      rulethickness=0.5em,
+      offset=overlay,
+      leftoffset=1em,
+      rightoffset=1em,
+      width=\textwidth,
+      setups=framedsetups,
+      before=\blank,
+      after=\blank,
+    ]
+    },
+  after={
+    \stopbackground
+  }]
 
 \stopenvironment
