@@ -1,13 +1,15 @@
-\startchapter[title={Les types d'entités ReColNat(+)},reference=c:entites]
+\startchapter[title={Les types d'entités ReColNat+},reference=c:entites]
 
-Ce chapitre liste les types d'objets exposés et offerts à la manipulation dans le Collaboratoire.
+Dans ce document, le vocable « entité » sera utilisé pour désigner tout objet d'intérêt exposé et offert à la manipulation dans le Collaboratoire.
+
+Ce chapitre dresse la liste des entités identifiées.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\startsection[title={Identification des entités d'intérêt}]
+\startsection[title={Identification des entités}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,14 +61,50 @@ Ce chapitre liste les types d'objets exposés et offerts à la manipulation dans
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsection[title={Propriétés générales des entités}]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Notion d'accréditation}]
+
 \exig{}
-La création d'une entité ReColNat+ doit être située ; chaque entité doit ainsi garder trace du module au sein duquel elle a été créée ; de la date à laquelle elle a été créée ; de l'identité de son créateur.
+Le système doit pouvoir représenter le fait que certains utilisateurs jouissent d'un contrôle particulier sur certaines entités au regard de certaines opérations du fait que, dans le monde réel, ils tiennent le rôle de gestionnaire des objets que représentent ces entités.
+
+Pour exemple, le responsable d'une entité collection dispose à ce titre d'une accréditation à changer le nom de celle-ci.
+
+\exig{}
+Le système doit permettre aux utilisateurs accrédités sur une entité de conférer tout ou partie de leur pouvoir à d'autres utilisateurs.
+
+Pour exemple, le responsable d'une entité collection peut accorder une accréditation à un chercheur pour travailler sur les planches qui sont sous responsabilité.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Métadonnées internes}]
+
+\exig{}
+Le système doit permettre de visualiser les métadonnées de chaque entité exposée dans l'interface, tant les métadonnées internes éditables que les métadonnées internes non éditables.
+Ces métadonnées sont cruciales pour la compréhension de ce qu'est une entité.
+
+Note :
+Le composant d'interface dans lequel sont affichées les métadonnées internes d'une entité est désigné dans ce document comme « l'Inspecteur d'entités » (le nommer est important car il accueillera d'autres fonctions).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsubsection[title={Métadonnées internes non éditables}]
+
+\exig{}
+Le système doit associer à chaque entité des métadonnées internes non éditables caractérisant sa création (son type, le nom du module au sein duquel elle a été créée, la date de création, l'identité de l'entité sociale qui l'a créée).
 
 \exig{}
 Le système doit pouvoir référencer n'importe quel objet accessible via le Web (publiquement ou via un accès authentifié ReColNat) susceptible de présenter un intérêt scientifique pour les utilisateurs.
 Les entités représentant ces « objets externes » doivent fournir le même niveau d'instrumentation sociale et documentaire que les entités ayant été créées dans ReColNat+.
 Ces entités doivent également connaître le type de l'objet externe qu'elles désignent, afin notamment d'informer les interfaces de la conduite à tenir lorsqu'il est question de les représenter et de les manipuler.
-Il faut également que ces entités soient identifiées par un identifiant à valeur dans la base de données externe dont elles proviennent, afin notamment de pouvoir construire des URLs d'accès.
+Ces entités doivent également recevoir un identifiant à valeur dans la base de données externe dont elles proviennent, afin notamment de pouvoir construire des URLs d'accès.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsubsection[title={Métadonnées internes éditables}]
+
+\exig{}
+Le système doit permettre aux gestionnaires accrédités d'une entité de définir des métadonnées internes éditables (son nom, sa description).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,7 +121,7 @@ Ce modèle permet notamment :
 	\item
 	de représenter des relations structurelles méréologiques (pour exemple, une collection contient des planches, une planche contient des spécimens, etc.) ;
 	\item
-	de représenter des relations d'association dont la sémantique est totalement libre tissées entre entités de diverses natures.
+	de représenter des relations d'association tissées entre entités de diverses natures et dont la sémantique est totalement libre.
 \stopitemize
 
 \fig{UML_Base}{Diagramme de classes UML simplifié du modèle de base RecolNat+}{f:uml:base}{max}
