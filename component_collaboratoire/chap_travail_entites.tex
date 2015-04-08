@@ -1,0 +1,91 @@
+\startchapter[title={Travail sur les entités}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Fonctions de transcriptions}]
+
+\exig{}
+Le système doit proposer des fonctions de transcription collaboratives du contenu des étiquettes.
+
+\idea{}
+Le processus de transcription doit débuter par l'identification graphique de la portion de l'image contenant l'étiquette et l'identification graphique et qualification de chacun de ses champs.
+
+\exig{}
+Le système doit, au-delà des appels à transcription sur les champs de l'étiquette, pouvoir permettre la collecte collaborative d'informations structurées tels ques les caractères.
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Annotation}]
+
+\exig{}
+Le système doit permettre d'associer des annotations (titre + contenu textuel libre) à toute entité.
+
+\exig{}
+Le système doit permettre de créer des notes libres au sein des conteneurs (il s'agit ici d'objets documentaires assimilables à des annotations sans objet, servant par exemple à la prise de notes en vue de la rédaction d'un article, à la mémorisation d'idées dans un esprit « cahier de laboratoire », etc.).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Pages entité}]
+
+\exig{}
+Le système doit exposer, pour chaque entité métier, une page de présentation synthétisant sous forme d'un hyperdocument la totalité des informations créées dans ReColNat+ à son sujet, des liens vers les ressources tierces qui s'y rapportent (ces liens externes sont à inventorier), et les sous-entités qui ont été générées au sein de ReColNat+ (une planche et ses différents spécimens + étiquettes, une étiquette et ses différents champs, une collection et ses différentes planches, une image et ses différentes sélections & annotations, etc.).
+Ces pages constituent une sorte de {\it sitemap} de l'ensemble des données.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Tags}]
+
+\exig{}
+Le système doit permettre de taguer toute entité avec des tags simples dont les propriétés internes requises sont un nom et une couleur.
+
+\exig{}
+Le système doit proposer une recherche d'information par tags, qui exclue les tags marqués comme privés.
+
+\exig{}
+Le système doit permettre à l'utilisateur de créer des tags clef-valeur, afin notamment de représenter les caractères des spécimens (pour exemple : « Nombre de feuille : 4 », « Couleur : turquoise »).
+
+\exig{}
+Le SI ReColNat+ doit exposer une API publique authentifiée via CAS pour mettre à disposition la totalité des fonctions de tagging aux autres modules ReColNat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsubsection[title={Éléments de modélisation}]
+
+Un tag est une relation.
+Quand un utilisateur U1 veut tagger une entité E1 avec un tag, le système crée à la fois la relation R1 contenant les propriétés immanentes du tag et une opinion d'approbation à son sujet reliant R1 à U1.
+Ainsi, si un autre utilisateur U2 veut également associer ce même tag à E1, le système créera une seconde opinion d'approbation reliant R1 à U2.
+Le tag représenté par R1 prend alors un poids social de 2.
+Conséquemment, il est possible de désapprouver l'emploi d'un tag.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Exports}]
+
+\exig{}
+Le système doit permettre d'exporter au format Excel des listes d'identifiants d'images avec tous les caractères (nom et valeur) qui leurs sonst associés.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startsection[title={Taxonomie}]
+
+\exig{}
+Le système doit permettre de visualiser, pour un spécimen donné, les différents efforts taxonomiques qui l'ont ciblé depuis sa collecte.

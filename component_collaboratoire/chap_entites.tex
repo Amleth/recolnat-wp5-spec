@@ -92,6 +92,11 @@ Ces métadonnées sont cruciales pour la compréhension de ce qu'est une entité
 Note :
 Le composant d'interface dans lequel sont affichées les métadonnées internes d'une entité est désigné dans ce document comme « l'Inspecteur d'entités » (le nommer est important car il accueillera d'autres fonctions).
 
+\exig{}
+Le système doit pouvoir associer une information de géolocalisation à chaque entité (cela est surtout utile pour les entités-spécimens).
+Le système doit permettre de rechercher des entités en définissant des mailles géographiques (ensemble de coordonnées GPS) représentant des zones du monde.
+Chaque zone renvoie vers les entités qu'elle contient, et réciproquement, chaque entité sait dans quelles zones elle se trouve.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \startsubsubsection[title={Métadonnées internes non éditables}]
 

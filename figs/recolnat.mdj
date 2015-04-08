@@ -2905,19 +2905,19 @@
 									"showShadow": false,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 216,
+									"left": 220,
 									"top": 176,
-									"width": 53,
+									"width": 29,
 									"height": 10,
 									"autoResize": false,
-									"alpha": -0.38050626216986916,
-									"distance": 32.31098884280702,
+									"alpha": -0.49934653059739453,
+									"distance": 25.059928172283335,
 									"hostEdge": {
 										"$ref": "AAAAAAFMSt99+B0JdtE="
 									},
 									"edgePosition": 2,
 									"underline": false,
-									"text": "+contained",
+									"text": "+child",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -3006,19 +3006,19 @@
 									"showShadow": false,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 321,
-									"top": 177,
-									"width": 54,
+									"left": 333,
+									"top": 179,
+									"width": 36,
 									"height": 10,
 									"autoResize": false,
-									"alpha": 0.3805064920549266,
-									"distance": 32.31098884280702,
+									"alpha": 0.4783525827300532,
+									"distance": 30.4138126514911,
 									"hostEdge": {
 										"$ref": "AAAAAAFMSt99+B0JdtE="
 									},
 									"edgePosition": 0,
 									"underline": false,
-									"text": "+containers",
+									"text": "+parent",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -4910,7 +4910,7 @@
 										"_parent": {
 											"$ref": "AAAAAAFMSt999h0FtHk="
 										},
-										"name": "contained",
+										"name": "child",
 										"reference": {
 											"$ref": "AAAAAAFMStLuBnjcnEU="
 										},
@@ -4930,7 +4930,7 @@
 										"_parent": {
 											"$ref": "AAAAAAFMSt999h0FtHk="
 										},
-										"name": "containers",
+										"name": "parent",
 										"reference": {
 											"$ref": "AAAAAAFMStyLZgTodE0="
 										},
@@ -5062,6 +5062,7 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
+									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,

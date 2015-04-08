@@ -1,11 +1,27 @@
 \startchapter[title={Travail sur les images}]
 
-\startTODO
-\startitemize
-	\item faire des mesures, et les mémoriser (objets graphiques représentant des mesures spatialisés dans l'espace de l'image)
-	\item superposer les images (en leur attribuant un niveau de transparence)
-	\item spatialiser les notules sur les images
-	\item interface de transcription
-	\item des espaces bidimensionnel pour spatialiser librement des fragments d'image (et leur attribuer un niveau de zoom indépendant)
-\stopitemize
-\stopTODO
+\exig{}
+Le système doit permettre de définir des sélections libres sur les images.
+Dans un premier temps, ces sélections seront de forme rectangulaire.
+Chaque sélection est une entité à part entière reliée à son image d'origine.
+Toutefois, une sélection ne porte pas d'information autre que celles circonscrivant une zone graphique sur l'image de laquelle elle provient.
+Elle sert cependant de point d'ancrage à d'autres entités plus « sémantiques » (des annotations), auxquelles elle fournit un opérateur de contextualisation matériel dans la spatialité d'une image.
+Ainsi, plusieurs contributeurs peuvent annoter une même sélection.
+
+\idea{}
+La conjonction des entités-conteneurs dans lesquels les entités enfants peuvent être librement spatialisées et des entités-sélections susmentionnées permet de créer des répertoires de sélections : série de petites feuilles dentelées, séries de signatures de récolteurs sur les étiquettes, etc.
+
+\exig{}
+Le système doit permettre de définir un niveau de zoom pour chaque sélection apparaissant dans la représentation spatiale libre d'une entité-conteneur, afin de faciliter la comparaison synoptique de fragments issus de planches diverses.
+
+\exig{}
+Le système doit permettre d'effectuer des mesures sur les planches, et de persister & partager ces mesures.
+
+\exig{}
+Le système doit permettre de superposer librement des images à des fins de comparaison, et de modifier leurs niveaux de transparence.
+
+\idea{}
+Parfois, est intégré à la planche le protologue (publication de référence associée à la découverte du spécimen).
+
+\idea{}
+Parfois, est intégrée à l'herbier, une lettre manuscrite, qui peut être très émouvante (demander à Lisa de me donner l'URL de celle que nous avons trouvé le 13/03/2015).
